@@ -99,7 +99,7 @@ export const RegisterPage: React.FC = () => {
             <Sprout className="w-6 h-6" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-            Create Your Smart Farm Account
+            Create Your FarmNexa Account
           </h1>
           <p className="text-xs sm:text-sm text-gray-500 mt-1">
             Join thousands of farmers, consumers, and skilled agricultural workers across Karnataka.
@@ -116,7 +116,7 @@ export const RegisterPage: React.FC = () => {
           {/* Role Selector Cards */}
           <div>
             <label className="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">
-              Select Your Role on Smart Farm
+              Select Your Role on FarmNexa
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <button

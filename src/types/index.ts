@@ -1,5 +1,5 @@
 // ===================================================
-// SMART FARM CORE TYPES & DATA INTERFACES
+// FarmNexa CORE TYPES & DATA INTERFACES
 // ===================================================
 
 export type UserRole = 'farmer' | 'consumer' | 'worker' | 'admin';

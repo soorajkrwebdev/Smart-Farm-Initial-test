@@ -24,17 +24,17 @@ import {
 } from './mockData';
 
 const KEYS = {
-  PROFILES: 'smartfarm_profiles_prod_v4',
-  PRODUCTS: 'smartfarm_products_prod_v4',
-  ORDERS: 'smartfarm_orders_prod_v4',
-  JOBS: 'smartfarm_jobs_prod_v4',
-  APPLICATIONS: 'smartfarm_applications_prod_v4',
-  MARKET_PRICES: 'smartfarm_market_prices_prod_v4',
-  WEATHER: 'smartfarm_weather_prod_v4',
-  ARTICLES: 'smartfarm_articles_prod_v4',
-  NOTIFICATIONS: 'smartfarm_notifications_prod_v4',
-  REVIEWS: 'smartfarm_reviews_prod_v4',
-  CURRENT_USER: 'smartfarm_active_user_prod_v4',
+  PROFILES: 'farmnexa_profiles_prod_v4',
+  PRODUCTS: 'farmnexa_products_prod_v4',
+  ORDERS: 'farmnexa_orders_prod_v4',
+  JOBS: 'farmnexa_jobs_prod_v4',
+  APPLICATIONS: 'farmnexa_applications_prod_v4',
+  MARKET_PRICES: 'farmnexa_market_prices_prod_v4',
+  WEATHER: 'farmnexa_weather_prod_v4',
+  ARTICLES: 'farmnexa_articles_prod_v4',
+  NOTIFICATIONS: 'farmnexa_notifications_prod_v4',
+  REVIEWS: 'farmnexa_reviews_prod_v4',
+  CURRENT_USER: 'farmnexa_active_user_prod_v4',
 };
 
 function getStorage<T>(key: string, initialData: T): T {

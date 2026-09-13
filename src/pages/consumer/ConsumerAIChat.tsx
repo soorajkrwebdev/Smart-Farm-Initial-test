@@ -8,7 +8,7 @@ export const ConsumerAIChat: React.FC = () => {
     {
       id: 'init-msg',
       role: 'assistant',
-      content: 'Namaskara! I am your **Smart Farm Consumer Assistant**. I can help you find fresh produce directly from verified farmers, compare mandi prices, or track your orders. What produce are you looking for today?',
+      content: 'Namaskara! I am your **FarmNexa Consumer Assistant**. I can help you find fresh produce directly from verified farmers, compare mandi prices, or track your orders. What produce are you looking for today?',
       timestamp: new Date().toISOString(),
     },
   ]);

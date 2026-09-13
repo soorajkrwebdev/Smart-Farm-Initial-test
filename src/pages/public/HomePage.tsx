@@ -443,7 +443,7 @@ export const HomePage: React.FC = () => {
                 Authentic Agricultural Data, Zero Disguised Figures.
               </h3>
               <p className="text-xs sm:text-sm text-emerald-200/80 leading-relaxed">
-                Smart Farm never fabricates live mandi auctions or weather observations. Every mandi reference price specifies its APMC origin, reporting date, and quality disclaimer. Our mission is direct farmer empowerment through transparency.
+                FarmNexa never fabricates live mandi auctions or weather observations. Every mandi reference price specifies its APMC origin, reporting date, and quality disclaimer. Our mission is direct farmer empowerment through transparency.
               </p>
             </div>
 

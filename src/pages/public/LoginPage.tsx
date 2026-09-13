@@ -39,7 +39,7 @@ export const LoginPage: React.FC = () => {
             <Sprout className="w-7 h-7" />
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-            Welcome to Smart Farm
+            Welcome to FarmNexa
           </h2>
           <p className="text-xs sm:text-sm text-gray-500 mt-1">
             Sign in to access Farm Marketplace, Jobs, Market Prices, and Dashboard.
@@ -116,7 +116,7 @@ export const LoginPage: React.FC = () => {
           </form>
 
           <div className="text-center pt-2 border-t border-gray-100 text-xs text-gray-600">
-            <span>New to Smart Farm? </span>
+            <span>New to FarmNexa? </span>
             <Link to="/register" className="font-bold text-emerald-800 hover:underline">
               Create Account as Farmer, Consumer, or Worker &rarr;
             </Link>

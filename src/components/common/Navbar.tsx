@@ -75,10 +75,10 @@ export const Navbar: React.FC = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-lg font-extrabold text-emerald-950 tracking-tight leading-none">
-                    SMART<span className="text-emerald-600">FARM</span>
+                    Farm<span className="text-emerald-600">Nexa</span>
                   </span>
                   <span className="text-[9px] uppercase tracking-wider text-emerald-800/80 font-medium hidden sm:block">
-                    From Farm To Market
+                    Connecting the future of farming
                   </span>
                 </div>
               </Link>
@@ -241,7 +241,7 @@ export const Navbar: React.FC = () => {
                     to="/register"
                     className="px-3.5 py-1.5 text-xs font-semibold bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl shadow-xs transition-colors"
                   >
-                    Join Smart Farm
+                    Join FarmNexa
                   </Link>
                 </div>
               )}

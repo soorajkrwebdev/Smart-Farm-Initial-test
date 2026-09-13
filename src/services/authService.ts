@@ -56,7 +56,7 @@ export const authService = {
 
       const fullProfile: UserProfile = {
         id: data.user.id,
-        name: profileData.name || 'Smart Farmer',
+        name: profileData.name || 'FarmNexa User',
         email: profileData.email,
         phone: profileData.phone || '',
         role: profileData.role || 'consumer',
@@ -82,7 +82,7 @@ export const authService = {
     const fullProfile: UserProfile = {
       id: `usr-${Date.now()}`,
       name: profileData.name || 'New Member',
-      email: profileData.email || `user${Date.now()}@smartfarm.in`,
+      email: profileData.email || `user${Date.now()}@farmnexa.in`,
       phone: profileData.phone || '+91 98000 00000',
       role: profileData.role || 'consumer',
       avatar_url: profileData.avatar_url || null,

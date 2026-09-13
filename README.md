@@ -1,8 +1,8 @@
-# SMART FARM
+# FarmNexa
 > **"From Farm to Market, Everything in One Place."**  
 > *Connect. Trade. Work. Learn. Grow.*
 
-Smart Farm is an integrated, scalable, responsive digital agricultural ecosystem connecting **Farmers**, **Consumers**, and **Agricultural Workers**, initially optimized for Karnataka and rural/semi-urban Indian agritech workflows.
+FarmNexa is an integrated, scalable, responsive digital agricultural ecosystem connecting **Farmers**, **Consumers**, and **Agricultural Workers**, initially optimized for Karnataka and rural/semi-urban Indian agritech workflows.
 
 ---
 
@@ -72,7 +72,7 @@ Copy `.env.example` to `.env`:
 ```bash
 cp .env.example .env
 ```
-*(Smart Farm runs out-of-the-box with `VITE_DEMO_MODE=true`. Supabase credentials and external API keys can be supplied at any time).*
+*(FarmNexa runs out-of-the-box with `VITE_DEMO_MODE=true`. Supabase credentials and external API keys can be supplied at any time).*
 
 ### 3. Run Development Server
 ```bash
@@ -91,10 +91,10 @@ npm run preview
 
 The top **Demo Banner** and **Login Page** include 1-click evaluation buttons:
 
-- **👨‍🌾 Farmer**: Ramesh Gowda (`farmer@smartfarm.in`) — Sullia, Dakshina Kannada (Black Pepper, Arecanut, Banana)
-- **🛒 Consumer**: Ananya Rao (`consumer@smartfarm.in`) — Kadri Hills, Mangaluru
-- **👷 Worker**: Suresh Poojary (`worker@smartfarm.in`) — Puttur, Dakshina Kannada (Arecanut climber, ₹850/day)
-- **🛡️ Admin**: Dr. Vinay Kumar (`admin@smartfarm.in`) — Bengaluru Urban
+- **👨‍🌾 Farmer**: Ramesh Gowda (`farmer@farmnexa.in`) — Sullia, Dakshina Kannada (Black Pepper, Arecanut, Banana)
+- **🛒 Consumer**: Ananya Rao (`consumer@farmnexa.in`) — Kadri Hills, Mangaluru
+- **👷 Worker**: Suresh Poojary (`worker@farmnexa.in`) — Puttur, Dakshina Kannada (Arecanut climber, ₹850/day)
+- **🛡️ Admin**: Dr. Vinay Kumar (`admin@farmnexa.in`) — Bengaluru Urban
 
 ---
 

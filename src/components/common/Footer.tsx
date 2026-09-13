@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-emerald-900/40 text-emerald-400/80">
-            <p>© 2026 SMART FARM Ecosystem. Built for sustainable Indian agriculture.</p>
+            <p>© 2026 FarmNexa Ecosystem. Built for sustainable Indian agriculture.</p>
             <p className="flex items-center gap-1 mt-2 sm:mt-0">
               <span>Karnataka Agri-Tech Initiative</span>
               <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" />

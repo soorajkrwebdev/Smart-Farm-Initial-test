@@ -10,7 +10,7 @@ export const FarmerAIChat: React.FC = () => {
     {
       id: 'init-farmer-ai',
       role: 'assistant',
-      content: `Namaskara ${user?.name || 'Farmer'}! I am **FarmAI**, your intelligent agricultural assistant. I am connected directly to your Smart Farm data, local mandi rates, and district weather models.\n\nAsk me about today's mandi commodity prices, weather spray windows, finding workers, or checking your pending orders!`,
+      content: `Namaskara ${user?.name || 'Farmer'}! I am **FarmAI**, your intelligent agricultural assistant. I am connected directly to your FarmNexa data, local mandi rates, and district weather models.\n\nAsk me about today's mandi commodity prices, weather spray windows, finding workers, or checking your pending orders!`,
       timestamp: new Date().toISOString(),
     },
   ]);

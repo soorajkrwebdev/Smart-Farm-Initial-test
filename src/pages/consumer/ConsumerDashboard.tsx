@@ -165,7 +165,7 @@ export const ConsumerDashboard: React.FC = () => {
             <Sparkles className="w-5 h-5 text-amber-700" />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-amber-950">Ask Smart Farm Consumer AI</h4>
+            <h4 className="text-sm font-bold text-amber-950">Ask FarmNexa Consumer AI</h4>
             <p className="text-xs text-amber-800">"Find organic black pepper under ₹600/kg from Sullia farmers"</p>
           </div>
         </div>

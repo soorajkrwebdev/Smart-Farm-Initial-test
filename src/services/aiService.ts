@@ -221,7 +221,7 @@ export const aiService = {
       };
     } else {
       return {
-        reply: `Namaskara! I am **Smart Farm Assistant**. I can help you find fresh farm produce directly from local farmers, compare mandi prices, or track your orders.\n\nWhat produce are you looking for today?`,
+        reply: `Namaskara! I am **FarmNexa Assistant**. I can help you find fresh farm produce directly from local farmers, compare mandi prices, or track your orders.\n\nWhat produce are you looking for today?`,
       };
     }
   },

@@ -1,5 +1,5 @@
 -- ===================================================
--- SMART FARM POSTGRESQL SCHEMA & ROW LEVEL SECURITY
+-- FarmNexa POSTGRESQL SCHEMA & ROW LEVEL SECURITY
 -- ===================================================
 
 -- Extensions
