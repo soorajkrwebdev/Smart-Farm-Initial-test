@@ -70,9 +70,11 @@ export const Navbar: React.FC = () => {
               </button>
 
               <Link to="/" className="flex items-center gap-2.5 group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-800 to-emerald-950 flex items-center justify-center text-white shadow-md shadow-emerald-900/10 group-hover:scale-105 transition-transform">
-                  <Sprout className="w-5 h-5 text-emerald-300" />
-                </div>
+                <img 
+                  src="/favicon2.svg" 
+                  alt="FarmNexa Logo"
+                  className="w-10 h-10 group-hover:scale-105 transition-transform"
+                />
                 <div className="flex flex-col">
                   <span className="text-lg font-extrabold text-emerald-950 tracking-tight leading-none">
                     Farm<span className="text-emerald-600">Nexa</span>
