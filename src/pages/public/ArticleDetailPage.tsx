@@ -4,16 +4,34 @@ import { repository } from '../../services/storageService';
 import { Article } from '../../types';
 import { formatDate } from '../../lib/utils';
 import { ShieldCheck, ExternalLink, ArrowLeft, Calendar, User, Tag } from 'lucide-react';
+import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 
 export const ArticleDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [article, setArticle] = useState<Article | null>(null);
 
   useEffect(() => {
-    if (slug) {
+    async function load() {
+      if (!slug) return;
+      if (isSupabaseConfigured && supabase) {
+        try {
+          const { data, error } = await supabase
+            .from('articles')
+            .select('*')
+            .eq('slug', slug)
+            .maybeSingle();
+          if (!error && data) {
+            setArticle(data as Article);
+            return;
+          }
+        } catch (e) {
+          console.warn('Article fetch from Supabase failed:', e);
+        }
+      }
       const art = repository.getArticles().find((a) => a.slug === slug);
       if (art) setArticle(art);
     }
+    load();
   }, [slug]);
 
   if (!article) {

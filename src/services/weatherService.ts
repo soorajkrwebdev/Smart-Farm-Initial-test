@@ -1,6 +1,7 @@
 import { WeatherData, WeatherForecastDay } from '../types';
 import { KARNATAKA_LOCATIONS } from '../lib/constants';
 import { repository } from './storageService';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 const DISTRICT_COORDINATES: Record<string, { lat: number; lon: number }> = {
   'Dakshina Kannada': { lat: 12.87, lon: 74.88 },
@@ -27,6 +28,41 @@ function mapWeatherCode(code: number): string {
 export const weatherService = {
   async getWeatherForDistrict(districtName: string = 'Dakshina Kannada'): Promise<WeatherData> {
     const coords = DISTRICT_COORDINATES[districtName] || DISTRICT_COORDINATES['Dakshina Kannada'];
+    const stateName = 'Karnataka';
+
+    if (isSupabaseConfigured && supabase) {
+      try {
+        const { data } = await supabase
+          .from('weather_cache')
+          .select('*')
+          .eq('district', districtName)
+          .eq('state', stateName)
+          .maybeSingle();
+        if (data) {
+          const staleCutoff = Date.now() - 2 * 60 * 60 * 1000;
+          const updated = new Date(data.updated_at).getTime();
+          if (updated > staleCutoff && data.forecast_json && Array.isArray(data.forecast_json)) {
+            return {
+              district: data.district,
+              state: data.state,
+              current_temp: data.current_temp,
+              condition: data.condition,
+              humidity: data.humidity,
+              wind_speed: data.wind_speed,
+              rain_probability: data.rain_probability,
+              rainfall_mm: 0,
+              forecast: data.forecast_json as WeatherForecastDay[],
+              alerts: (data.alerts_json as string[]) || [],
+              agricultural_advisory: '',
+              updated_at: data.updated_at,
+              source: 'Supabase PostgreSQL Weather Cache (Open-Meteo / IMD Calibration)',
+            };
+          }
+        }
+      } catch (e) {
+        console.warn('Supabase weather_cache read failed:', e);
+      }
+    }
 
     try {
       const response = await fetch(
@@ -82,19 +118,37 @@ export const weatherService = {
           source: 'Open-Meteo High Resolution Meteorological Feed / IMD Calibration',
         };
 
-        repository.saveWeather(liveData);
+        if (isSupabaseConfigured && supabase) {
+          try {
+            await supabase.from('weather_cache').upsert({
+              district: districtName,
+              state: stateName,
+              current_temp: liveData.current_temp,
+              condition: liveData.condition,
+              humidity: liveData.humidity,
+              wind_speed: liveData.wind_speed,
+              rain_probability: liveData.rain_probability,
+              forecast_json: forecast,
+              alerts_json: alerts,
+              updated_at: liveData.updated_at,
+            }, { onConflict: 'district, state' });
+          } catch (e) {
+            console.warn('Supabase weather_cache write failed:', e);
+          }
+        } else {
+          repository.saveWeather(liveData);
+        }
         return liveData;
       }
     } catch (err) {
       console.warn('Live meteorological forecast fetch failed, using cached weather bulletin:', err);
     }
 
-    // Fallback to cached weather data
     const cached = repository.getWeather();
     return {
       ...cached,
       district: districtName,
-      source: 'Verified Regional Weather Bulletin (Dakshina Kannada / Karnataka Agro-Met)',
+      source: 'Verified Regional Weather Bulletin (Dakshina Kannada / Karnataka Agro-Met) [FALLBACK]',
     };
   },
 };

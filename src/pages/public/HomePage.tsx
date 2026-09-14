@@ -14,8 +14,10 @@ import {
   Calendar,
   MapPin,
   Star,
-  DollarSign
+  DollarSign,
+  Lock
 } from 'lucide-react';
+import { useAuth } from '../../context/AuthContext';
 import { productService } from '../../services/productService';
 import { marketPriceService, MarketPriceResult } from '../../services/marketPriceService';
 import { weatherService } from '../../services/weatherService';
@@ -24,6 +26,7 @@ import { formatINR, formatUnitPrice } from '../../lib/utils';
 import { useCart } from '../../context/CartContext';
 
 export const HomePage: React.FC = () => {
+  const { user } = useAuth();
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
   const [mandiResult, setMandiResult] = useState<MarketPriceResult | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -33,23 +36,38 @@ export const HomePage: React.FC = () => {
   useEffect(() => {
     async function loadData() {
       try {
-        const [prods, mandi, w] = await Promise.all([
-          productService.getProducts(),
-          marketPriceService.getMarketPrices(),
-          weatherService.getWeatherForDistrict('Dakshina Kannada'),
-        ]);
-        setFeaturedProducts(prods.slice(0, 4));
-        setMandiResult(mandi);
-        setWeather(w);
+        // Only load market and weather data for logged-in users
+        if (user) {
+          const [prods, mandi, w] = await Promise.all([
+            productService.getProducts(),
+            marketPriceService.getMarketPrices(),
+            weatherService.getWeatherForDistrict('Dakshina Kannada'),
+          ]);
+          setFeaturedProducts(prods.slice(0, 4));
+          setMandiResult(mandi);
+          setWeather(w);
+        } else {
+          // For guests, only load products
+          const prods = await productService.getProducts();
+          setFeaturedProducts(prods.slice(0, 4));
+        }
       } catch (e) {
         console.error('Failed to load homepage feeds:', e);
       }
     }
     loadData();
-  }, []);
+  }, [user]);
 
   const handleAddToCart = (e: React.MouseEvent, prod: Product) => {
     e.preventDefault();
+    
+    // Require login for guests
+    if (!user) {
+      // Redirect to login
+      window.location.href = '/login';
+      return;
+    }
+    
     addItem(prod, 1);
     setAddedId(prod.id);
     setTimeout(() => setAddedId(null), 1500);
@@ -57,8 +75,8 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="space-y-16 pb-12">
-      {/* 1. Mandi Ticker Ribbon */}
-      {mandiResult && mandiResult.data.length > 0 && (
+      {/* 1. Mandi Ticker Ribbon - Only for Logged-in Users */}
+      {user && mandiResult && mandiResult.data.length > 0 && (
         <div className="bg-emerald-900 text-white overflow-hidden py-2 px-4 shadow-inner border-b border-emerald-800">
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 text-xs">
             <div className="flex items-center gap-2 shrink-0 font-bold text-emerald-300">
@@ -174,38 +192,71 @@ export const HomePage: React.FC = () => {
               </div>
             )}
 
-            {/* FarmAI Teaser Card */}
-            <div className="bg-white rounded-3xl p-5 shadow-lg border border-emerald-100 space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
-                    <Sparkles className="w-4 h-4" />
+            {/* FarmAI Teaser Card - Only for Logged-in Users, or Login Prompt for Guests */}
+            {user ? (
+              <div className="bg-white rounded-3xl p-5 shadow-lg border border-emerald-100 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900">Ask FarmAI</h4>
+                      <p className="text-[10px] text-gray-500">Instant answers with real mandi & weather data</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-gray-900">Ask FarmAI</h4>
-                    <p className="text-[10px] text-gray-500">Instant answers with real mandi & weather data</p>
+                  <span className="text-[10px] font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full">
+                    AI Ready
+                  </span>
+                </div>
+
+                <div className="p-3 bg-gray-50 rounded-xl text-xs text-gray-700 italic border border-gray-100">
+                  "What is today's reference price for Pepper in Sullia mandi, and can I spray copper sulfate tomorrow?"
+                </div>
+
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-[11px] text-gray-500">Connected to 10+ Agricultural Tools</span>
+                  <Link
+                    to="/farmer/ai"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-emerald-800 hover:text-emerald-900"
+                  >
+                    <span>Launch Assistant</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-3xl p-5 shadow-lg border border-amber-200 space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-xl bg-amber-200 text-amber-900 flex items-center justify-center font-bold">
+                      <Lock className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-bold text-gray-900">Unlock FarmAI Assistant</h4>
+                      <p className="text-[10px] text-gray-600">Sign in to access AI-powered farming advice</p>
+                    </div>
                   </div>
                 </div>
-                <span className="text-[10px] font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full">
-                  AI Ready
-                </span>
-              </div>
 
-              <div className="p-3 bg-gray-50 rounded-xl text-xs text-gray-700 italic border border-gray-100">
-                "What is today's reference price for Pepper in Sullia mandi, and can I spray copper sulfate tomorrow?"
-              </div>
+                <div className="p-3 bg-white rounded-xl text-xs text-gray-700 border border-amber-200">
+                  <p className="font-semibold text-amber-900 mb-1">Get instant answers about:</p>
+                  <ul className="text-[11px] text-gray-700 space-y-0.5">
+                    <li>• Mandi reference prices for your crops</li>
+                    <li>• Weather forecasts & farm advisories</li>
+                    <li>• Pest management & fertilizer guidance</li>
+                  </ul>
+                </div>
 
-              <div className="flex items-center justify-between pt-1">
-                <span className="text-[11px] text-gray-500">Connected to 10+ Agricultural Tools</span>
                 <Link
-                  to="/farmer/ai"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-emerald-800 hover:text-emerald-900"
+                  to="/login"
+                  className="flex items-center justify-center w-full py-2.5 px-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-bold gap-1.5 transition-colors"
                 >
-                  <span>Launch Assistant</span>
+                  <span>Sign In to Access</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

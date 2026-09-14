@@ -4,6 +4,7 @@ import { repository } from '../../services/storageService';
 import { Article } from '../../types';
 import { formatDate } from '../../lib/utils';
 import { BookOpen, Search, ShieldCheck, ArrowRight, Tag } from 'lucide-react';
+import { supabase, isSupabaseConfigured } from '../../lib/supabase';
 
 export const ArticlesPage: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -11,8 +12,26 @@ export const ArticlesPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   useEffect(() => {
-    const all = repository.getArticles().filter((a) => a.is_published);
-    setArticles(all);
+    async function load() {
+      if (isSupabaseConfigured && supabase) {
+        try {
+          const { data, error } = await supabase
+            .from('articles')
+            .select('*')
+            .eq('is_published', true)
+            .order('created_at', { ascending: false });
+          if (!error && data && data.length > 0) {
+            setArticles(data as Article[]);
+            return;
+          }
+        } catch (e) {
+          console.warn('Articles fetch from Supabase failed:', e);
+        }
+      }
+      const all = repository.getArticles().filter((a) => a.is_published);
+      setArticles(all);
+    }
+    load();
   }, []);
 
   const categories = ['all', 'Disease Management', 'Government Schemes', 'Crop Cultivation', 'Organic Farming'];

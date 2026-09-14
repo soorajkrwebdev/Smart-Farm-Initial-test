@@ -36,6 +36,8 @@ export const FarmerAddProduct: React.FC = () => {
   ]);
   const [mandiRef, setMandiRef] = useState<number | null>(null);
   const [isPublishing, setIsPublishing] = useState(false);
+  const [storageWarning, setStorageWarning] = useState<string | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   // When produce name changes, check for live mandi reference
   const handleNameBlur = async () => {
@@ -51,10 +53,10 @@ export const FarmerAddProduct: React.FC = () => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
       try {
-        const dataUrl = await productService.readFileAsDataURL(file);
-        setImages((prev) => [dataUrl, ...prev]);
+        const url = await productService.uploadProductImage(file);
+        setImages((prev) => [url, ...prev]);
       } catch (err) {
-        console.error('Image load error:', err);
+        console.error('Image upload error:', err);
       }
     }
   };
@@ -69,14 +71,9 @@ export const FarmerAddProduct: React.FC = () => {
 
     setIsPublishing(true);
     try {
-      const cat = PRODUCT_CATEGORIES.find((c) => c.id === categoryId);
       await productService.saveProduct({
         farmer_id: user.id,
-        farmer_name: user.name,
-        farmer_rating: 4.9,
-        farmer_verification: 'fpo_verified',
         category_id: categoryId,
-        category_name: cat?.name || 'Produce',
         name,
         variety,
         description: description || `Freshly harvested ${name} from ${user.village_town || 'Sullia'}.`,
@@ -92,7 +89,6 @@ export const FarmerAddProduct: React.FC = () => {
         village_town: user.village_town || 'Sullia',
         district: user.district || 'Dakshina Kannada',
         state: user.state || 'Karnataka',
-        mandi_reference_price: mandiRef || undefined,
       });
 
       navigate('/farmer/products');

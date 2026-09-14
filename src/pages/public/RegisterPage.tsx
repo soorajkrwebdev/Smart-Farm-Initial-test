@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { UserRole } from '../../types';
 import { KARNATAKA_LOCATIONS, WORKER_SKILL_OPTIONS } from '../../lib/constants';
-import { Sprout, ShoppingCart, Briefcase, Check, ArrowRight } from 'lucide-react';
+import { ShoppingCart, Briefcase, Check, ArrowRight, Sprout } from 'lucide-react';
 
 export const RegisterPage: React.FC = () => {
   const { register } = useAuth();
@@ -95,9 +95,11 @@ export const RegisterPage: React.FC = () => {
     <div className="min-h-screen py-12 px-4 bg-[#F8FAF8]">
       <div className="max-w-2xl mx-auto space-y-6">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-800 text-emerald-200 mb-3">
-            <Sprout className="w-6 h-6" />
-          </div>
+          <img 
+            src="/favicon2.svg" 
+            alt="FarmNexa Logo"
+            className="w-12 h-12 mx-auto mb-3 drop-shadow-md"
+          />
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
             Create Your FarmNexa Account
           </h1>

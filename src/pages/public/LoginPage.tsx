@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { Sprout, Lock, Mail, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Lock, Mail, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export const LoginPage: React.FC = () => {
   const { login } = useAuth();
@@ -35,9 +35,11 @@ export const LoginPage: React.FC = () => {
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-12 bg-gradient-to-b from-emerald-50/40 to-white">
       <div className="max-w-md w-full space-y-6">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-800 text-emerald-100 shadow-md shadow-emerald-900/10 mb-4">
-            <Sprout className="w-7 h-7" />
-          </div>
+          <img 
+            src="/favicon2.svg" 
+            alt="FarmNexa Logo"
+            className="w-14 h-14 mx-auto mb-4 drop-shadow-md"
+          />
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
             Welcome to FarmNexa
           </h2>

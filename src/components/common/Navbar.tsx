@@ -97,26 +97,28 @@ export const Navbar: React.FC = () => {
               </button>
             </div>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => {
-                const isActive = routerLocation.pathname === link.path;
-                return (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className={`px-3 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${
-                      isActive
-                        ? 'bg-emerald-800 text-white shadow-xs'
-                        : 'text-gray-700 hover:text-emerald-900 hover:bg-gray-50'
-                    }`}
-                  >
-                    <link.icon className="w-3.5 h-3.5" />
-                    <span>{link.label}</span>
-                  </Link>
-                );
-              })}
-            </nav>
+            {/* Desktop Navigation Links - Only for Logged-in Users */}
+            {user && (
+              <nav className="hidden lg:flex items-center gap-1">
+                {navLinks.map((link) => {
+                  const isActive = routerLocation.pathname === link.path;
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className={`px-3 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${
+                        isActive
+                          ? 'bg-emerald-800 text-white shadow-xs'
+                          : 'text-gray-700 hover:text-emerald-900 hover:bg-gray-50'
+                      }`}
+                    >
+                      <link.icon className="w-3.5 h-3.5" />
+                      <span>{link.label}</span>
+                    </Link>
+                  );
+                })}
+              </nav>
+            )}
 
             {/* Right Action Icons & User Status */}
             <div className="flex items-center gap-1.5 sm:gap-2.5">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { orderService } from '../../services/orderService';
-import { repository } from '../../services/storageService';
+import { productService } from '../../services/productService';
 import { Order } from '../../types';
 import { formatINR, formatDate } from '../../lib/utils';
 import { Package, Clock, CheckCircle2, Truck, AlertCircle, Star, MessageSquare } from 'lucide-react';
@@ -46,11 +46,11 @@ export const ConsumerOrders: React.FC = () => {
     }
   };
 
-  const handleReviewSubmit = (e: React.FormEvent) => {
+  const handleReviewSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!reviewOrder || !user) return;
 
-    repository.addReview({
+    await productService.addReview({
       order_id: reviewOrder.id,
       reviewer_id: user.id,
       reviewer_name: user.name,

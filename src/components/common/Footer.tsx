@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sprout, PhoneCall, ShieldCheck, Heart } from 'lucide-react';
+import { PhoneCall, ShieldCheck, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -10,11 +10,13 @@ export const Footer: React.FC = () => {
           {/* Brand & Vision */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-emerald-700 flex items-center justify-center text-white">
-                <Sprout className="w-5 h-5 text-emerald-200" />
-              </div>
+              <img 
+                src="/favicon2.svg" 
+                alt="FarmNexa Logo"
+                className="w-9 h-9 drop-shadow-md"
+              />
               <span className="text-xl font-extrabold text-white tracking-tight">
-                SMART<span className="text-emerald-400">FARM</span>
+                Farm<span className="text-emerald-400">Nexa</span>
               </span>
             </div>
             <p className="text-xs text-emerald-200/80 leading-relaxed max-w-sm">

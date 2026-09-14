@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { repository } from '../../services/storageService';
+import { authService } from '../../services/authService';
+import { productService } from '../../services/productService';
 import { FarmerProfile, Product, Review } from '../../types';
 import { formatUnitPrice } from '../../lib/utils';
 import { useCart } from '../../context/CartContext';
@@ -23,17 +24,31 @@ export const FarmerProfilePage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const { addItem } = useCart();
   const [addedId, setAddedId] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (id) {
-      const p = repository.getProfileById(id) as FarmerProfile;
-      if (p) setFarmer(p);
-      const prods = repository.getProducts().filter((prod) => prod.farmer_id === id && prod.status === 'active');
-      setProducts(prods);
-      const revs = repository.getReviews(id);
-      setReviews(revs);
+    async function load() {
+      if (id) {
+        setLoading(true);
+        const p = await authService.getFarmerProfile(id);
+        if (p) setFarmer(p);
+        const prods = await productService.getProducts({ farmerId: id });
+        setProducts(prods.filter((prod) => prod.status === 'active'));
+        const revs = await productService.getReviews(id);
+        setReviews(revs);
+        setLoading(false);
+      }
     }
+    load();
   }, [id]);
+
+  if (loading && !farmer) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-20 text-center text-gray-500">
+        Loading farmer profile...
+      </div>
+    );
+  }
 
   if (!farmer) {
     return (

@@ -1,5 +1,6 @@
 import { MarketPrice } from '../types';
 import { repository } from './storageService';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 export interface MarketPriceResult {
   data: MarketPrice[];
@@ -14,8 +15,7 @@ export const marketPriceService = {
     const marketApiUrl = import.meta.env.VITE_MARKET_API_BASE_URL;
     const marketApiKey = import.meta.env.VITE_MARKET_API_KEY;
 
-    // Check if live API is configured
-    if (marketApiUrl && marketApiKey) {
+    if (marketApiUrl && marketApiKey && !marketApiKey.includes('your-data-gov-in-api-key')) {
       try {
         const url = `${marketApiUrl}?api-key=${marketApiKey}&format=json&limit=50${
           commodity ? `&filters[commodity]=${encodeURIComponent(commodity)}` : ''
@@ -25,7 +25,7 @@ export const marketPriceService = {
           const json = await response.json();
           if (json.records && Array.isArray(json.records)) {
             const mapped: MarketPrice[] = json.records.map((r: any, index: number) => ({
-              id: `api-mp-${index}`,
+              id: `api-mp-${Date.now()}-${index}`,
               commodity: r.commodity || commodity || 'Agri Commodity',
               variety: r.variety || 'Standard',
               market: r.market || 'APMC Mandi',
@@ -40,22 +40,45 @@ export const marketPriceService = {
               source_url: 'https://agmarknet.gov.in',
               fetched_at: new Date().toISOString(),
             }));
-            repository.saveMarketPrices(mapped);
+            if (isSupabaseConfigured && supabase) {
+              try {
+                const toUpsert = mapped.slice(0, 50).map(({ id: _id, ...rest }) => ({ ...rest }));
+                await supabase.from('market_prices').insert(toUpsert as any);
+              } catch { /* ignore cache write errors */ }
+            } else {
+              repository.saveMarketPrices(mapped);
+            }
             return {
               data: mapped,
               isLive: true,
-              source: 'Government of India Agmarknet Live Portal',
+              source: 'Government of India Agmarknet Live Portal (Real-time)',
               lastUpdated: new Date().toISOString(),
             };
           }
         }
       } catch (err) {
-        console.warn('Live Agmarknet API sync unavailable, falling back to verified cached dataset:', err);
+        console.warn('Live Agmarknet API sync unavailable, falling back to cached dataset:', err);
       }
     }
 
-    // Fallback to verified cached mandi data
-    let prices = repository.getMarketPrices();
+    let prices: MarketPrice[] = [];
+
+    if (isSupabaseConfigured && supabase) {
+      try {
+        let query = supabase.from('market_prices').select('*').order('fetched_at', { ascending: false }).limit(100);
+        const { data, error } = await query;
+        if (!error && data && data.length > 0) {
+          prices = data as MarketPrice[];
+        }
+      } catch (e) {
+        console.warn('Supabase market_prices fetch failed, using localStorage fallback:', e);
+      }
+    }
+
+    if (prices.length === 0) {
+      prices = repository.getMarketPrices();
+    }
+
     if (commodity && commodity !== 'all') {
       prices = prices.filter((p) => p.commodity.toLowerCase().includes(commodity.toLowerCase()));
     }
@@ -63,16 +86,16 @@ export const marketPriceService = {
       prices = prices.filter((p) => p.district.toLowerCase() === district.toLowerCase());
     }
 
+    const lastUpdate = prices[0]?.fetched_at || new Date().toISOString();
     return {
       data: prices,
       isLive: false,
-      source: 'Verified Mandi Reference Records (CAMPCO & AGMARKNET Karnataka)',
-      lastUpdated: prices[0]?.fetched_at || new Date().toISOString(),
-      note: 'Showing latest verified mandi bulletin data. Reference prices may vary by grade, variety, moisture content, and market arrival.',
+      source: 'Supabase PostgreSQL Cache / Verified Mandi Reference Records (CAMPCO & AGMARKNET Karnataka)',
+      lastUpdated: lastUpdate,
+      note: '[CACHED REFERENCE DATA] Showing latest verified mandi bulletin reference prices. These may vary by grade, variety, moisture content, and market arrival. To enable live API sync, configure VITE_MARKET_API_BASE_URL and VITE_MARKET_API_KEY.',
     };
   },
 
-  // Mandi reference comparison helper for a specific farmer product
   async getReferenceForProduct(commodityName: string): Promise<MarketPrice | undefined> {
     const { data } = await this.getMarketPrices();
     return data.find((p) =>

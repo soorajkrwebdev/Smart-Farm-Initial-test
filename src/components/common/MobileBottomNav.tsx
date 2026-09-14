@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 export const MobileBottomNav: React.FC = () => {
-  const { role } = useAuth();
+  const { role, user } = useAuth();
   const { totalCount } = useCart();
 
   // Role-specific bottom navigation items
@@ -52,13 +52,9 @@ export const MobileBottomNav: React.FC = () => {
       { label: 'Verification', to: '/admin/verification', icon: Users },
     ];
   } else {
-    // Guest / Public
+    // Guest / Public - Minimal navigation
     navItems = [
       { label: 'Home', to: '/', icon: Home },
-      { label: 'Market', to: '/marketplace', icon: Package },
-      { label: 'Mandi', to: '/market-prices', icon: TrendingUp },
-      { label: 'Workers', to: '/workers', icon: Briefcase },
-      { label: 'Cart', to: '/consumer/cart', icon: ShoppingCart, badge: totalCount },
     ];
   }
 

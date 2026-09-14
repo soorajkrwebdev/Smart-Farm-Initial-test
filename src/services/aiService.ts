@@ -6,6 +6,7 @@ import { workerService } from './workerService';
 import { orderService } from './orderService';
 import { repository } from './storageService';
 import { formatINR } from '../lib/utils';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 interface ToolResult {
   tool_name: string;
@@ -78,12 +79,22 @@ export const aiService = {
         }));
       }
       case 'search_articles': {
-        const articles = repository.getArticles();
         const q = (params.query || '').toLowerCase();
+        let articles;
+        if (isSupabaseConfigured && supabase) {
+          const { data } = await supabase
+            .from('articles')
+            .select('*')
+            .or(`title.ilike.%${q}%,category.ilike.%${q}%`)
+            .limit(3);
+          articles = data || [];
+        } else {
+          articles = repository.getArticles()
+            .filter((a) => a.title.toLowerCase().includes(q) || a.category.toLowerCase().includes(q))
+            .slice(0, 3);
+        }
         return articles
-          .filter((a) => a.title.toLowerCase().includes(q) || a.category.toLowerCase().includes(q))
-          .slice(0, 3)
-          .map((a) => ({
+          .map((a: any) => ({
             title: a.title,
             category: a.category,
             source: a.official_source,
