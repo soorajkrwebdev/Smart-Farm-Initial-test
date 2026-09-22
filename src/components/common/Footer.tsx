@@ -12,11 +12,11 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-2.5">
               <img 
                 src="/favicon2.svg" 
-                alt="FarmNexa Logo"
+                alt="Farmlynq Logo"
                 className="w-9 h-9 drop-shadow-md"
               />
               <span className="text-xl font-extrabold text-white tracking-tight">
-                Farm<span className="text-emerald-400">Nexa</span>
+                Farm<span className="text-emerald-400">lynq</span>
               </span>
             </div>
             <p className="text-xs text-emerald-200/80 leading-relaxed max-w-sm">
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-emerald-900/40 text-emerald-400/80">
-            <p>© 2026 FarmNexa Ecosystem. Built for sustainable Indian agriculture.</p>
+            <p>© 2026 Farmlynq Ecosystem. Built for sustainable Indian agriculture.</p>
             <p className="flex items-center gap-1 mt-2 sm:mt-0">
               <span>Karnataka Agri-Tech Initiative</span>
               <Heart className="w-3.5 h-3.5 text-red-400 fill-red-400" />

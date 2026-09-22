@@ -1,0 +1,305 @@
+﻿{
+    "ok":  true,
+    "apiKeyPresent":  true,
+    "probesRun":  3,
+    "results":  [
+                    {
+                        "label":  "arecanut-national-sample-10",
+                        "query":  "api-key=***\u0026format=json\u0026limit=10\u0026offset=0\u0026filters[commodity]=Arecanut",
+                        "httpStatus":  200,
+                        "elapsedMs":  394,
+                        "summary":  {
+                                        "keys":  [
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "active",
+                                                     "index_name",
+                                                     "org",
+                                                     "org_type",
+                                                     "source",
+                                                     "title",
+                                                     "external_ws_url",
+                                                     "visualizable",
+                                                     "field",
+                                                     "external_ws",
+                                                     "catalog_uuid",
+                                                     "sector",
+                                                     "target_bucket",
+                                                     "desc",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  0,
+                                        "total":  0,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  0,
+                                        "recordFields":  [
+
+                                                         ],
+                                        "distinct":  {
+                                                         "state":  [
+
+                                                                   ],
+                                                         "commodity":  [
+
+                                                                       ]
+                                                     },
+                                        "sample":  [
+
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "coconut-national-sample-10",
+                        "query":  "api-key=***\u0026format=json\u0026limit=10\u0026offset=0\u0026filters[commodity]=Coconut",
+                        "httpStatus":  200,
+                        "elapsedMs":  148,
+                        "summary":  {
+                                        "keys":  [
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "active",
+                                                     "index_name",
+                                                     "org",
+                                                     "org_type",
+                                                     "source",
+                                                     "title",
+                                                     "external_ws_url",
+                                                     "visualizable",
+                                                     "field",
+                                                     "external_ws",
+                                                     "catalog_uuid",
+                                                     "sector",
+                                                     "target_bucket",
+                                                     "desc",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  10,
+                                        "total":  226,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  10,
+                                        "recordFields":  [
+                                                             "state",
+                                                             "district",
+                                                             "market",
+                                                             "commodity",
+                                                             "variety",
+                                                             "grade",
+                                                             "arrival_date",
+                                                             "min_price",
+                                                             "max_price",
+                                                             "modal_price"
+                                                         ],
+                                        "distinct":  {
+                                                         "state":  [
+                                                                       {
+                                                                           "value":  "Tamil Nadu",
+                                                                           "count":  9
+                                                                       },
+                                                                       {
+                                                                           "value":  "Keralam",
+                                                                           "count":  1
+                                                                       }
+                                                                   ],
+                                                         "commodity":  [
+                                                                           {
+                                                                               "value":  "Coconut",
+                                                                               "count":  10
+                                                                           }
+                                                                       ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "state":  "Keralam",
+                                                           "district":  "Kozhikode(Calicut)",
+                                                           "market":  "Mukkom Market",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Other",
+                                                           "grade":  "FAQ",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  6000,
+                                                           "max_price":  6400,
+                                                           "modal_price":  6200
+                                                       },
+                                                       {
+                                                           "state":  "Tamil Nadu",
+                                                           "district":  "Dharmapuri",
+                                                           "market":  "Palacode(Uzhavar Sandhai )",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Coconut",
+                                                           "grade":  "Local",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  6000,
+                                                           "max_price":  6500,
+                                                           "modal_price":  6250
+                                                       },
+                                                       {
+                                                           "state":  "Tamil Nadu",
+                                                           "district":  "Dharmapuri",
+                                                           "market":  "Karimangalam(Uzhavar Sandhai)",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Coconut",
+                                                           "grade":  "Local",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  7000,
+                                                           "max_price":  7400,
+                                                           "modal_price":  7200
+                                                       },
+                                                       {
+                                                           "state":  "Tamil Nadu",
+                                                           "district":  "Krishnagiri",
+                                                           "market":  "Denkanikottai(Uzhavar Sandhai )",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Coconut",
+                                                           "grade":  "Local",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  5000,
+                                                           "max_price":  5500,
+                                                           "modal_price":  5250
+                                                       },
+                                                       {
+                                                           "state":  "Tamil Nadu",
+                                                           "district":  "Madurai",
+                                                           "market":  "Usilampatti(Uzhavar Sandhai )",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Coconut",
+                                                           "grade":  "Local",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  6800,
+                                                           "max_price":  7000,
+                                                           "modal_price":  6900
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "pepper-national-sample-10",
+                        "query":  "api-key=***\u0026format=json\u0026limit=10\u0026offset=0\u0026filters[commodity]=Black+Pepper",
+                        "httpStatus":  200,
+                        "elapsedMs":  181,
+                        "summary":  {
+                                        "keys":  [
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "active",
+                                                     "index_name",
+                                                     "org",
+                                                     "org_type",
+                                                     "source",
+                                                     "title",
+                                                     "external_ws_url",
+                                                     "visualizable",
+                                                     "field",
+                                                     "external_ws",
+                                                     "catalog_uuid",
+                                                     "sector",
+                                                     "target_bucket",
+                                                     "desc",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  2,
+                                        "total":  2,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  2,
+                                        "recordFields":  [
+                                                             "state",
+                                                             "district",
+                                                             "market",
+                                                             "commodity",
+                                                             "variety",
+                                                             "grade",
+                                                             "arrival_date",
+                                                             "min_price",
+                                                             "max_price",
+                                                             "modal_price"
+                                                         ],
+                                        "distinct":  {
+                                                         "state":  [
+                                                                       {
+                                                                           "value":  "Rajasthan",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "West Bengal",
+                                                                           "count":  1
+                                                                       }
+                                                                   ],
+                                                         "commodity":  [
+                                                                           {
+                                                                               "value":  "Black Gram Dal(Urd Dal)",
+                                                                               "count":  1
+                                                                           },
+                                                                           {
+                                                                               "value":  "Black Gram(Urd Beans)(Whole)",
+                                                                               "count":  1
+                                                                           }
+                                                                       ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "state":  "Rajasthan",
+                                                           "district":  "Tonk",
+                                                           "market":  "Malpura APMC",
+                                                           "commodity":  "Black Gram(Urd Beans)(Whole)",
+                                                           "variety":  "Other",
+                                                           "grade":  "FAQ",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  7500,
+                                                           "max_price":  7900,
+                                                           "modal_price":  7860
+                                                       },
+                                                       {
+                                                           "state":  "West Bengal",
+                                                           "district":  "Darjeeling",
+                                                           "market":  "Siliguri APMC",
+                                                           "commodity":  "Black Gram Dal(Urd Dal)",
+                                                           "variety":  "Black Gram Dal",
+                                                           "grade":  "FAQ",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  12000,
+                                                           "max_price":  13000,
+                                                           "modal_price":  12500
+                                                       }
+                                                   ]
+                                    }
+                    }
+                ]
+}

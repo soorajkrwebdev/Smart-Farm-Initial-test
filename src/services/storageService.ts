@@ -24,22 +24,23 @@ import {
 } from './mockData';
 
 const KEYS = {
-  PROFILES: 'farmnexa_profiles_prod_v4',
-  PRODUCTS: 'farmnexa_products_prod_v4',
-  ORDERS: 'farmnexa_orders_prod_v4',
-  JOBS: 'farmnexa_jobs_prod_v4',
-  APPLICATIONS: 'farmnexa_applications_prod_v4',
-  MARKET_PRICES: 'farmnexa_market_prices_prod_v4',
-  WEATHER: 'farmnexa_weather_prod_v4',
-  ARTICLES: 'farmnexa_articles_prod_v4',
-  NOTIFICATIONS: 'farmnexa_notifications_prod_v4',
-  REVIEWS: 'farmnexa_reviews_prod_v4',
-  CURRENT_USER: 'farmnexa_active_user_prod_v4',
+  PROFILES: 'farmlynq_profiles_prod_v4',
+  PRODUCTS: 'farmlynq_products_prod_v4',
+  ORDERS: 'farmlynq_orders_prod_v4',
+  JOBS: 'farmlynq_jobs_prod_v4',
+  APPLICATIONS: 'farmlynq_applications_prod_v4',
+  MARKET_PRICES: 'farmlynq_market_prices_prod_v4',
+  WEATHER: 'farmlynq_weather_prod_v4',
+  ARTICLES: 'farmlynq_articles_prod_v4',
+  NOTIFICATIONS: 'farmlynq_notifications_prod_v4',
+  REVIEWS: 'farmlynq_reviews_prod_v4',
+  CURRENT_USER: 'farmlynq_active_user_prod_v4',
 };
 
 function getStorage<T>(key: string, initialData: T): T {
   try {
-    const item = localStorage.getItem(key);
+    const legacyKey = key.replace('farmlynq_', 'farmnexa_');
+    const item = localStorage.getItem(key) || (legacyKey !== key ? localStorage.getItem(legacyKey) : null);
     if (!item) {
       localStorage.setItem(key, JSON.stringify(initialData));
       return initialData;

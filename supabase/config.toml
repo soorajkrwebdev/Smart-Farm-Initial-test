@@ -1,0 +1,29 @@
+# =====================================================================
+# Farmlynq — Supabase project configuration
+# =====================================================================
+# Used by the Supabase CLI for `supabase functions deploy`,
+# `supabase secrets set` and `supabase db push`.
+#
+# Only project/function settings that Farmlynq actually needs are pinned
+# here; everything else uses the CLI defaults.
+# =====================================================================
+
+project_id = "farmnexa"
+
+[functions.refresh-market-prices]
+# verify_jwt = false is REQUIRED here.
+# The browser holds only the publishable/anon key (`sb_publishable_...`), which
+# the Supabase gateway refuses when JWT verification is on; supabase-js always
+# attaches it as the `apikey` header. Secrets stay server-side regardless: the
+# government API key is read from the MARKET_API_KEY Supabase secret and the
+# database is written with SUPABASE_SERVICE_ROLE_KEY, neither of which ever
+# reaches the browser. Abuse is limited by the built-in server-side throttle
+# (MARKET_REFRESH_MIN_INTERVAL_MINUTES, default 10).
+verify_jwt = false
+
+# TEMPORARY diagnostic endpoint used to investigate which official
+# data.gov.in resources carry Arecanut / Coconut / Black Pepper. Same
+# rationale as above for verify_jwt = false; it is removed once the
+# investigation is complete.
+[functions.market-feed-diagnostic]
+verify_jwt = false

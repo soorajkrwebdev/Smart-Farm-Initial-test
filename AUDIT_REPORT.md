@@ -1,4 +1,4 @@
-# FarmNexa - Comprehensive Codebase Audit Report
+# Farmlynq - Comprehensive Codebase Audit Report
 **Date**: September 14, 2026  
 **Status**: Complete - Ready for Production-Ready Migration
 
@@ -281,7 +281,22 @@ User views weather → Fetches from open-meteo API → Caches to localStorage
 
 **File**: `src/services/marketPriceService.ts`
 
-### Architecture
+> **UPDATE (fixed — 20 Sep 2026):** the findings below describe the *previous*
+> implementation and are kept for history only. Market prices are no longer
+> fetched in the browser and no government API key is used in `VITE_*`
+> variables. The current architecture is:
+> ```
+> browser → marketPriceService → Supabase Edge Function `refresh-market-prices`
+>         → data.gov.in (server-side, `MARKET_API_KEY` secret)
+>         → validate + map → UPSERT public.market_prices (no duplicates)
+>         → browser re-reads Supabase (source of truth)
+> ```
+> The UI now distinguishes **LIVE** (freshly fetched) from **CACHED**
+> (previously fetched) data, always shows a real "Last updated" timestamp plus
+> the government bulletin date, and never calls cached data "real-time".
+> See `README.md` → "Secure Mandi Price Sync (Supabase Edge Function)".
+
+### Architecture (historical — superseded)
 ```
 1. Check if LIVE API configured (VITE_MARKET_API_BASE_URL + VITE_MARKET_API_KEY)
    ↓
@@ -557,10 +572,17 @@ VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-public-anon-key
 ```
 
-### To Enable Market Price Live API
+### To Enable Market Price Live API (historical guidance — DO NOT USE)
+
+> The `VITE_MARKET_API_KEY` approach below was removed because it exposed the
+> government API key to every browser. The key must now be a Supabase secret
+> (`MARKET_API_KEY`) consumed by the `refresh-market-prices` Edge Function.
+
 ```bash
-VITE_MARKET_API_BASE_URL=https://api.data.gov.in/resource/9ef6b8d7-5d3d-...
-VITE_MARKET_API_KEY=your-agmarknet-api-key
+# Do NOT put the government API key in a VITE_* variable.
+# Instead (server-side only):
+supabase secrets set MARKET_API_KEY=your-data-gov-in-api-key
+supabase functions deploy refresh-market-prices --project-ref <your-project-ref>
 ```
 
 ### To Enable Real Weather (Optional)
@@ -669,7 +691,7 @@ VITE_MARKET_API_KEY=your-agmarknet-api-key
 
 ### Phase 3: Enable Market Price API (1 day)
 1. Get data.gov.in API credentials
-2. Set market API env vars
+2. Store the key as a Supabase secret (`MARKET_API_KEY`) and deploy the `refresh-market-prices` Edge Function — never as a `VITE_*` variable
 3. Test live market price sync
 4. Fix UI labels (hide "LIVE" in fallback mode)
 

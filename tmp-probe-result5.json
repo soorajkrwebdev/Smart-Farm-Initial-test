@@ -1,0 +1,837 @@
+{
+    "ok":  true,
+    "apiKeyPresent":  true,
+    "probesRun":  6,
+    "results":  [
+                    {
+                        "label":  "V-arecanut-variant-betelnut",
+                        "query":  "filters[Commodity]=Arecanut(Betelnut/Supari)\u0026limit=10\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  394,
+                        "summary":  {
+                                        "keys":  [
+                                                     "index_name",
+                                                     "title",
+                                                     "desc",
+                                                     "org_type",
+                                                     "org",
+                                                     "sector",
+                                                     "source",
+                                                     "catalog_uuid",
+                                                     "visualizable",
+                                                     "active",
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "external_ws",
+                                                     "external_ws_url",
+                                                     "target_bucket",
+                                                     "field",
+                                                     "field_dependent",
+                                                     "order",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  10,
+                                        "total":  401746,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  10,
+                                        "recordFields":  [
+                                                             "Arrival_Date",
+                                                             "Commodity",
+                                                             "Commodity_Code",
+                                                             "District",
+                                                             "Grade",
+                                                             "Market",
+                                                             "Max_Price",
+                                                             "Min_Price",
+                                                             "Modal_Price",
+                                                             "State",
+                                                             "Variety"
+                                                         ],
+                                        "distinct":  {
+                                                         "Commodity":  [
+                                                                           {
+                                                                               "value":  "Arecanut(Betelnut/Supari)",
+                                                                               "count":  10
+                                                                           }
+                                                                       ],
+                                                         "State":  [
+                                                                       {
+                                                                           "value":  "Assam",
+                                                                           "count":  10
+                                                                       }
+                                                                   ],
+                                                         "Arrival_Date":  [
+                                                                              {
+                                                                                  "value":  "02/06/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "04/03/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "06/02/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "06/05/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "09/02/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "17/02/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "17/03/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "19/01/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "24/06/2010",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "27/01/2010",
+                                                                                  "count":  1
+                                                                              }
+                                                                          ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "Arrival_Date":  "19/01/2010",
+                                                           "Commodity":  "Arecanut(Betelnut/Supari)",
+                                                           "Commodity_Code":  "140",
+                                                           "District":  "Barpeta",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Howly",
+                                                           "Max_Price":  "12500",
+                                                           "Min_Price":  "11500",
+                                                           "Modal_Price":  "12000",
+                                                           "State":  "Assam",
+                                                           "Variety":  "Other"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "27/01/2010",
+                                                           "Commodity":  "Arecanut(Betelnut/Supari)",
+                                                           "Commodity_Code":  "140",
+                                                           "District":  "Barpeta",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Howly",
+                                                           "Max_Price":  "12000",
+                                                           "Min_Price":  "11200",
+                                                           "Modal_Price":  "11600",
+                                                           "State":  "Assam",
+                                                           "Variety":  "Other"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "06/02/2010",
+                                                           "Commodity":  "Arecanut(Betelnut/Supari)",
+                                                           "Commodity_Code":  "140",
+                                                           "District":  "Barpeta",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Howly",
+                                                           "Max_Price":  "12500",
+                                                           "Min_Price":  "11500",
+                                                           "Modal_Price":  "12250",
+                                                           "State":  "Assam",
+                                                           "Variety":  "Other"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "09/02/2010",
+                                                           "Commodity":  "Arecanut(Betelnut/Supari)",
+                                                           "Commodity_Code":  "140",
+                                                           "District":  "Barpeta",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Howly",
+                                                           "Max_Price":  "12000",
+                                                           "Min_Price":  "11000",
+                                                           "Modal_Price":  "11500",
+                                                           "State":  "Assam",
+                                                           "Variety":  "Other"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "17/02/2010",
+                                                           "Commodity":  "Arecanut(Betelnut/Supari)",
+                                                           "Commodity_Code":  "140",
+                                                           "District":  "Barpeta",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Howly",
+                                                           "Max_Price":  "15500",
+                                                           "Min_Price":  "10500",
+                                                           "Modal_Price":  "11000",
+                                                           "State":  "Assam",
+                                                           "Variety":  "Other"
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "W-arecanut-variant-spaced",
+                        "query":  "filters[Commodity]=Arecanut+(Betelnut/Supari)\u0026limit=10\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  142,
+                        "summary":  {
+                                        "keys":  [
+                                                     "index_name",
+                                                     "title",
+                                                     "desc",
+                                                     "org_type",
+                                                     "org",
+                                                     "sector",
+                                                     "source",
+                                                     "catalog_uuid",
+                                                     "visualizable",
+                                                     "active",
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "external_ws",
+                                                     "external_ws_url",
+                                                     "target_bucket",
+                                                     "field",
+                                                     "field_dependent",
+                                                     "order",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  0,
+                                        "total":  0,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  0,
+                                        "recordFields":  [
+
+                                                         ],
+                                        "distinct":  {
+                                                         "Commodity":  [
+
+                                                                       ],
+                                                         "State":  [
+
+                                                                   ],
+                                                         "Arrival_Date":  [
+
+                                                                          ]
+                                                     },
+                                        "sample":  [
+
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "X-arecanut-latest-sort",
+                        "query":  "limit=5\u0026sort[Arrival_Date]=desc\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  1075,
+                        "summary":  {
+                                        "keys":  [
+                                                     "index_name",
+                                                     "title",
+                                                     "desc",
+                                                     "org_type",
+                                                     "org",
+                                                     "sector",
+                                                     "source",
+                                                     "catalog_uuid",
+                                                     "visualizable",
+                                                     "active",
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "external_ws",
+                                                     "external_ws_url",
+                                                     "target_bucket",
+                                                     "field",
+                                                     "field_dependent",
+                                                     "order",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  5,
+                                        "total":  81924930,
+                                        "limit":  "5",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  5,
+                                        "recordFields":  [
+                                                             "Arrival_Date",
+                                                             "Commodity",
+                                                             "Commodity_Code",
+                                                             "District",
+                                                             "Grade",
+                                                             "Market",
+                                                             "Max_Price",
+                                                             "Min_Price",
+                                                             "Modal_Price",
+                                                             "State",
+                                                             "Variety"
+                                                         ],
+                                        "distinct":  {
+                                                         "Commodity":  [
+                                                                           {
+                                                                               "value":  "Capsicum",
+                                                                               "count":  2
+                                                                           },
+                                                                           {
+                                                                               "value":  "Maize",
+                                                                               "count":  1
+                                                                           },
+                                                                           {
+                                                                               "value":  "Paddy(Basmati)",
+                                                                               "count":  1
+                                                                           },
+                                                                           {
+                                                                               "value":  "Potato",
+                                                                               "count":  1
+                                                                           }
+                                                                       ],
+                                                         "State":  [
+                                                                       {
+                                                                           "value":  "Uttar Pradesh",
+                                                                           "count":  3
+                                                                       },
+                                                                       {
+                                                                           "value":  "Himachal Pradesh",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Punjab",
+                                                                           "count":  1
+                                                                       }
+                                                                   ],
+                                                         "Arrival_Date":  [
+                                                                              {
+                                                                                  "value":  "20/09/2026",
+                                                                                  "count":  3
+                                                                              },
+                                                                              {
+                                                                                  "value":  "19/09/2026",
+                                                                                  "count":  2
+                                                                              }
+                                                                          ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "Arrival_Date":  "20/09/2026",
+                                                           "Commodity":  "Maize",
+                                                           "Commodity_Code":  4,
+                                                           "District":  "Badaun",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Babrala APMC",
+                                                           "Max_Price":  2150,
+                                                           "Min_Price":  2130,
+                                                           "Modal_Price":  2140,
+                                                           "State":  "Uttar Pradesh",
+                                                           "Variety":  "Local"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "20/09/2026",
+                                                           "Commodity":  "Potato",
+                                                           "Commodity_Code":  24,
+                                                           "District":  "Badaun",
+                                                           "Grade":  "Medium",
+                                                           "Market":  "Babrala APMC",
+                                                           "Max_Price":  600,
+                                                           "Min_Price":  580,
+                                                           "Modal_Price":  590,
+                                                           "State":  "Uttar Pradesh",
+                                                           "Variety":  "Potato"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "20/09/2026",
+                                                           "Commodity":  "Paddy(Basmati)",
+                                                           "Commodity_Code":  414,
+                                                           "District":  "Badaun",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Babrala APMC",
+                                                           "Max_Price":  2800,
+                                                           "Min_Price":  2780,
+                                                           "Modal_Price":  2790,
+                                                           "State":  "Uttar Pradesh",
+                                                           "Variety":  "Basmati 1509"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "19/09/2026",
+                                                           "Commodity":  "Capsicum",
+                                                           "Commodity_Code":  164,
+                                                           "District":  "Kangra",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "SMY Dharamshala",
+                                                           "Max_Price":  6200,
+                                                           "Min_Price":  5600,
+                                                           "Modal_Price":  5900,
+                                                           "State":  "Himachal Pradesh",
+                                                           "Variety":  "Capsicum"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "19/09/2026",
+                                                           "Commodity":  "Capsicum",
+                                                           "Commodity_Code":  164,
+                                                           "District":  "Kapurthala",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Bhulath (Nadala) APMC",
+                                                           "Max_Price":  800,
+                                                           "Min_Price":  750,
+                                                           "Modal_Price":  800,
+                                                           "State":  "Punjab",
+                                                           "Variety":  "Capsicum"
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "Y-coconut-latest-sort",
+                        "query":  "limit=5\u0026sort[Arrival_Date]=desc\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  834,
+                        "summary":  {
+                                        "keys":  [
+                                                     "index_name",
+                                                     "title",
+                                                     "desc",
+                                                     "org_type",
+                                                     "org",
+                                                     "sector",
+                                                     "source",
+                                                     "catalog_uuid",
+                                                     "visualizable",
+                                                     "active",
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "external_ws",
+                                                     "external_ws_url",
+                                                     "target_bucket",
+                                                     "field",
+                                                     "field_dependent",
+                                                     "order",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  5,
+                                        "total":  81924930,
+                                        "limit":  "5",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  5,
+                                        "recordFields":  [
+                                                             "Arrival_Date",
+                                                             "Commodity",
+                                                             "Commodity_Code",
+                                                             "District",
+                                                             "Grade",
+                                                             "Market",
+                                                             "Max_Price",
+                                                             "Min_Price",
+                                                             "Modal_Price",
+                                                             "State",
+                                                             "Variety"
+                                                         ],
+                                        "distinct":  {
+                                                         "Commodity":  [
+                                                                           {
+                                                                               "value":  "Bottle gourd",
+                                                                               "count":  2
+                                                                           },
+                                                                           {
+                                                                               "value":  "Maize",
+                                                                               "count":  1
+                                                                           },
+                                                                           {
+                                                                               "value":  "Paddy(Basmati)",
+                                                                               "count":  1
+                                                                           },
+                                                                           {
+                                                                               "value":  "Potato",
+                                                                               "count":  1
+                                                                           }
+                                                                       ],
+                                                         "State":  [
+                                                                       {
+                                                                           "value":  "Uttar Pradesh",
+                                                                           "count":  3
+                                                                       },
+                                                                       {
+                                                                           "value":  "Gujarat",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Telangana",
+                                                                           "count":  1
+                                                                       }
+                                                                   ],
+                                                         "Arrival_Date":  [
+                                                                              {
+                                                                                  "value":  "20/09/2026",
+                                                                                  "count":  3
+                                                                              },
+                                                                              {
+                                                                                  "value":  "19/09/2026",
+                                                                                  "count":  2
+                                                                              }
+                                                                          ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "Arrival_Date":  "20/09/2026",
+                                                           "Commodity":  "Maize",
+                                                           "Commodity_Code":  4,
+                                                           "District":  "Badaun",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Babrala APMC",
+                                                           "Max_Price":  2150,
+                                                           "Min_Price":  2130,
+                                                           "Modal_Price":  2140,
+                                                           "State":  "Uttar Pradesh",
+                                                           "Variety":  "Local"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "20/09/2026",
+                                                           "Commodity":  "Paddy(Basmati)",
+                                                           "Commodity_Code":  414,
+                                                           "District":  "Badaun",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Babrala APMC",
+                                                           "Max_Price":  2800,
+                                                           "Min_Price":  2780,
+                                                           "Modal_Price":  2790,
+                                                           "State":  "Uttar Pradesh",
+                                                           "Variety":  "Basmati 1509"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "20/09/2026",
+                                                           "Commodity":  "Potato",
+                                                           "Commodity_Code":  24,
+                                                           "District":  "Badaun",
+                                                           "Grade":  "Medium",
+                                                           "Market":  "Babrala APMC",
+                                                           "Max_Price":  600,
+                                                           "Min_Price":  580,
+                                                           "Modal_Price":  590,
+                                                           "State":  "Uttar Pradesh",
+                                                           "Variety":  "Potato"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "19/09/2026",
+                                                           "Commodity":  "Bottle gourd",
+                                                           "Commodity_Code":  82,
+                                                           "District":  "Surat",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Surat APMC",
+                                                           "Max_Price":  3000,
+                                                           "Min_Price":  1000,
+                                                           "Modal_Price":  2000,
+                                                           "State":  "Gujarat",
+                                                           "Variety":  "Bottle Gourd"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "19/09/2026",
+                                                           "Commodity":  "Bottle gourd",
+                                                           "Commodity_Code":  82,
+                                                           "District":  "Medchal Malkajgiri",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Kukatpally,RBZ",
+                                                           "Max_Price":  1500,
+                                                           "Min_Price":  1500,
+                                                           "Modal_Price":  1500,
+                                                           "State":  "Telangana",
+                                                           "Variety":  "Bottle Gourd"
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "Z-pepper-variant-pepper",
+                        "query":  "filters[Commodity]=Pepper\u0026limit=10\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  142,
+                        "summary":  {
+                                        "keys":  [
+                                                     "index_name",
+                                                     "title",
+                                                     "desc",
+                                                     "org_type",
+                                                     "org",
+                                                     "sector",
+                                                     "source",
+                                                     "catalog_uuid",
+                                                     "visualizable",
+                                                     "active",
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "external_ws",
+                                                     "external_ws_url",
+                                                     "target_bucket",
+                                                     "field",
+                                                     "field_dependent",
+                                                     "order",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  0,
+                                        "total":  0,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  0,
+                                        "recordFields":  [
+
+                                                         ],
+                                        "distinct":  {
+                                                         "Commodity":  [
+
+                                                                       ],
+                                                         "State":  [
+
+                                                                   ],
+                                                         "Arrival_Date":  [
+
+                                                                          ]
+                                                     },
+                                        "sample":  [
+
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "AA-pepper-variant-lower",
+                        "query":  "filters[Commodity]=Black+pepper\u0026limit=10\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  149,
+                        "summary":  {
+                                        "keys":  [
+                                                     "index_name",
+                                                     "title",
+                                                     "desc",
+                                                     "org_type",
+                                                     "org",
+                                                     "sector",
+                                                     "source",
+                                                     "catalog_uuid",
+                                                     "visualizable",
+                                                     "active",
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "external_ws",
+                                                     "external_ws_url",
+                                                     "target_bucket",
+                                                     "field",
+                                                     "field_dependent",
+                                                     "order",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  10,
+                                        "total":  97013,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  10,
+                                        "recordFields":  [
+                                                             "Arrival_Date",
+                                                             "Commodity",
+                                                             "Commodity_Code",
+                                                             "District",
+                                                             "Grade",
+                                                             "Market",
+                                                             "Max_Price",
+                                                             "Min_Price",
+                                                             "Modal_Price",
+                                                             "State",
+                                                             "Variety"
+                                                         ],
+                                        "distinct":  {
+                                                         "Commodity":  [
+                                                                           {
+                                                                               "value":  "Black pepper",
+                                                                               "count":  10
+                                                                           }
+                                                                       ],
+                                                         "State":  [
+                                                                       {
+                                                                           "value":  "Karnataka",
+                                                                           "count":  10
+                                                                       }
+                                                                   ],
+                                                         "Arrival_Date":  [
+                                                                              {
+                                                                                  "value":  "04/09/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "05/08/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "05/09/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "11/08/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "11/09/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "12/09/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "14/08/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "22/08/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "23/08/2008",
+                                                                                  "count":  1
+                                                                              },
+                                                                              {
+                                                                                  "value":  "30/07/2008",
+                                                                                  "count":  1
+                                                                              }
+                                                                          ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "Arrival_Date":  "30/07/2008",
+                                                           "Commodity":  "Black pepper",
+                                                           "Commodity_Code":  "38",
+                                                           "District":  "Udupi",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Karkala",
+                                                           "Max_Price":  "14000",
+                                                           "Min_Price":  "13500",
+                                                           "Modal_Price":  "13700",
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Other"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "05/08/2008",
+                                                           "Commodity":  "Black pepper",
+                                                           "Commodity_Code":  "38",
+                                                           "District":  "Udupi",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Karkala",
+                                                           "Max_Price":  "14000",
+                                                           "Min_Price":  "13000",
+                                                           "Modal_Price":  "13500",
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Other"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "11/08/2008",
+                                                           "Commodity":  "Black pepper",
+                                                           "Commodity_Code":  "38",
+                                                           "District":  "Udupi",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Karkala",
+                                                           "Max_Price":  "14000",
+                                                           "Min_Price":  "13000",
+                                                           "Modal_Price":  "13500",
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Other"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "14/08/2008",
+                                                           "Commodity":  "Black pepper",
+                                                           "Commodity_Code":  "38",
+                                                           "District":  "Udupi",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Karkala",
+                                                           "Max_Price":  "14000",
+                                                           "Min_Price":  "13000",
+                                                           "Modal_Price":  "13500",
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Other"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "22/08/2008",
+                                                           "Commodity":  "Black pepper",
+                                                           "Commodity_Code":  "38",
+                                                           "District":  "Udupi",
+                                                           "Grade":  "FAQ",
+                                                           "Market":  "Karkala",
+                                                           "Max_Price":  "14000",
+                                                           "Min_Price":  "13000",
+                                                           "Modal_Price":  "13500",
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Other"
+                                                       }
+                                                   ]
+                                    }
+                    }
+                ]
+}

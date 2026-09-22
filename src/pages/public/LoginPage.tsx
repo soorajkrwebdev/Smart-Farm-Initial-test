@@ -37,11 +37,11 @@ export const LoginPage: React.FC = () => {
         <div className="text-center">
           <img 
             src="/favicon2.svg" 
-            alt="FarmNexa Logo"
+            alt="Farmlynq Logo"
             className="w-14 h-14 mx-auto mb-4 drop-shadow-md"
           />
           <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-            Welcome to FarmNexa
+            Welcome to Farmlynq
           </h2>
           <p className="text-xs sm:text-sm text-gray-500 mt-1">
             Sign in to access Farm Marketplace, Jobs, Market Prices, and Dashboard.
@@ -118,7 +118,7 @@ export const LoginPage: React.FC = () => {
           </form>
 
           <div className="text-center pt-2 border-t border-gray-100 text-xs text-gray-600">
-            <span>New to FarmNexa? </span>
+            <span>New to Farmlynq? </span>
             <Link to="/register" className="font-bold text-emerald-800 hover:underline">
               Create Account as Farmer, Consumer, or Worker &rarr;
             </Link>

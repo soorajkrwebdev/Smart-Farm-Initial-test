@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { marketPriceService, MarketPriceResult } from '../../services/marketPriceService';
 import { KARNATAKA_LOCATIONS } from '../../lib/constants';
-import { formatINR, formatDate } from '../../lib/utils';
-import { TrendingUp, Search, ShieldCheck, AlertCircle, RefreshCw } from 'lucide-react';
+import { formatINR, formatDate, formatDateTime } from '../../lib/utils';
+import { TrendingUp, Search, ShieldCheck, AlertCircle, RefreshCw, Clock } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 export const MarketPricesPage: React.FC = () => {
@@ -10,25 +10,51 @@ export const MarketPricesPage: React.FC = () => {
   const [commodityFilter, setCommodityFilter] = useState('');
   const [districtFilter, setDistrictFilter] = useState('all');
   const [isLoading, setIsLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
-  const fetchPrices = async () => {
-    setIsLoading(true);
+  const initialLoadDone = useRef(false);
+
+  const fetchPrices = async (forceRefresh = false, allowAutoRefresh = true) => {
+    if (forceRefresh) setIsRefreshing(true);
+    else setIsLoading(true);
     try {
       const res = await marketPriceService.getMarketPrices(
         commodityFilter || undefined,
-        districtFilter !== 'all' ? districtFilter : undefined
+        districtFilter !== 'all' ? districtFilter : undefined,
+        // Manual refresh forces a server-side refetch; the first page load
+        // refreshes automatically only when the Supabase copy is stale, and
+        // filter changes never trigger an upstream fetch.
+        forceRefresh
+          ? { refresh: true, force: true }
+          : allowAutoRefresh
+            ? undefined
+            : { refresh: false }
       );
       setResult(res);
     } catch (e) {
       console.error('Failed to load market prices:', e);
     } finally {
       setIsLoading(false);
+      setIsRefreshing(false);
     }
   };
 
   useEffect(() => {
-    fetchPrices();
+    if (!initialLoadDone.current) {
+      initialLoadDone.current = true;
+      fetchPrices(false);
+      return;
+    }
+    fetchPrices(false, false);
   }, [commodityFilter, districtFilter]);
+
+  const isLive = result?.status === 'live';
+  const statusLabel =
+    result?.status === 'live'
+      ? 'LIVE — freshly fetched'
+      : result?.status === 'cached'
+        ? 'CACHED — not refreshed now'
+        : 'OFFLINE CACHE — device data';
 
   const chartData = (result?.data || []).map((p) => ({
     name: p.commodity.split(' ')[0],
@@ -46,8 +72,16 @@ export const MarketPricesPage: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-950 tracking-tight">
               APMC Mandi Market Prices
             </h1>
-            <span className="bg-emerald-100 text-emerald-900 text-xs font-bold px-2.5 py-0.5 rounded-full">
-              Reference Benchmarks
+            <span
+              className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
+                isLive
+                  ? 'bg-emerald-100 text-emerald-900'
+                  : result?.status === 'cached'
+                    ? 'bg-amber-100 text-amber-900'
+                    : 'bg-gray-200 text-gray-700'
+              }`}
+            >
+              {statusLabel}
             </span>
           </div>
           <p className="text-xs sm:text-sm text-gray-500 mt-1">
@@ -56,23 +90,51 @@ export const MarketPricesPage: React.FC = () => {
         </div>
 
         <button
-          onClick={fetchPrices}
-          className="px-3.5 py-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 text-xs font-semibold flex items-center gap-2 self-start sm:self-auto shadow-xs"
+          onClick={() => fetchPrices(true)}
+          disabled={isRefreshing || isLoading}
+          className="px-3.5 py-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 text-xs font-semibold flex items-center gap-2 self-start sm:self-auto shadow-xs disabled:opacity-60 disabled:cursor-not-allowed"
+          title="Ask the secure server-side service for the latest mandi bulletin"
         >
-          <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin text-emerald-600' : ''}`} />
-          <span>Refresh Data</span>
+          <RefreshCw
+            className={`w-3.5 h-3.5 ${isRefreshing || isLoading ? 'animate-spin text-emerald-600' : ''}`}
+          />
+          <span>{isRefreshing ? 'Refreshing…' : 'Refresh Data'}</span>
         </button>
       </div>
 
-      {/* Source & Provenance Badge */}
-      <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
-        <div className="flex items-center gap-2 text-emerald-900 font-semibold">
-          <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-          <span>Source: {result?.source}</span>
+      {/* Source, Provenance & Freshness Badge */}
+      <div
+        className={`p-4 rounded-2xl border flex flex-col gap-2 text-xs ${
+          isLive ? 'bg-emerald-50 border-emerald-200' : 'bg-amber-50 border-amber-200'
+        }`}
+      >
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div
+            className={`flex items-center gap-2 font-semibold ${
+              isLive ? 'text-emerald-900' : 'text-amber-900'
+            }`}
+          >
+            <ShieldCheck className={`w-4 h-4 shrink-0 ${isLive ? 'text-emerald-700' : 'text-amber-700'}`} />
+            <span>Source: {result?.source}</span>
+          </div>
+          <div
+            className={`flex flex-col sm:flex-row sm:items-center sm:gap-4 text-[11px] ${
+              isLive ? 'text-emerald-700' : 'text-amber-800'
+            }`}
+          >
+            <span className="flex items-center gap-1">
+              <Clock className="w-3.5 h-3.5" />
+              Last updated: {result?.lastUpdated ? formatDateTime(result.lastUpdated) : '—'}
+            </span>
+            <span>Market data date: {result?.priceDate ? formatDate(result.priceDate) : '—'}</span>
+          </div>
         </div>
-        <div className="text-emerald-700 text-[11px]">
-          Last fetched: {result?.lastUpdated ? formatDate(result.lastUpdated) : 'Live'}
-        </div>
+        {result?.note && (
+          <p className={`flex items-start gap-2 text-[11px] leading-relaxed ${isLive ? 'text-emerald-800' : 'text-amber-900'}`}>
+            <AlertCircle className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+            <span>{result.note}</span>
+          </p>
+        )}
       </div>
 
       {/* Filters */}
@@ -159,6 +221,22 @@ export const MarketPricesPage: React.FC = () => {
                   <td className="p-4 text-gray-500 whitespace-nowrap">{formatDate(row.price_date)}</td>
                 </tr>
               ))}
+              {!isLoading && (result?.data || []).length === 0 && (
+                <tr>
+                  <td colSpan={7} className="p-6 text-center text-xs text-gray-500">
+                    No mandi records available for this filter yet. Use “Refresh Data” to request the latest
+                    government mandi bulletin; if the refresh fails, previously fetched Supabase records remain
+                    visible here.
+                  </td>
+                </tr>
+              )}
+              {isLoading && (
+                <tr>
+                  <td colSpan={7} className="p-6 text-center text-xs text-gray-500">
+                    Loading mandi prices…
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
@@ -168,7 +246,7 @@ export const MarketPricesPage: React.FC = () => {
       <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex items-start gap-2.5 text-xs text-gray-500 leading-relaxed">
         <AlertCircle className="w-4 h-4 text-gray-400 shrink-0 mt-0.5" />
         <p>
-          <strong>Reference Price Notice:</strong> Reference prices are sourced from official open market bulletins (AGMARKNET) and CAMPCO. Mandi prices serve as indicative regional benchmarks and are not guaranteed sales receipts. Farmgate prices may vary based on moisture, drying standards, grade quality, variety, and market transaction costs.
+          <strong>Reference Price Notice:</strong> Reference prices are sourced from the official open market bulletin feed (AGMARKNET / data.gov.in) through a secure server-side sync into our database. Mandi prices serve as indicative regional benchmarks and are not guaranteed sales receipts. Farmgate prices may vary based on moisture, drying standards, grade quality, variety, and market transaction costs.
         </p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { repository } from '../../services/storageService';
-import { marketPriceService } from '../../services/marketPriceService';
+import { marketPriceService, MarketPriceResult } from '../../services/marketPriceService';
 import { weatherService } from '../../services/weatherService';
 import { 
   Users, 
@@ -14,7 +14,7 @@ import {
   CheckCircle2,
   Activity
 } from 'lucide-react';
-import { formatINR } from '../../lib/utils';
+import { formatINR, formatDateTime } from '../../lib/utils';
 
 export const AdminOverview: React.FC = () => {
   const [userCount, setUserCount] = useState(0);
@@ -22,6 +22,7 @@ export const AdminOverview: React.FC = () => {
   const [orderCount, setOrderCount] = useState(0);
   const [jobCount, setJobCount] = useState(0);
   const [totalRevenue, setTotalRevenue] = useState(0);
+  const [mandiResult, setMandiResult] = useState<MarketPriceResult | null>(null);
 
   useEffect(() => {
     const profiles = repository.getProfiles();
@@ -37,6 +38,15 @@ export const AdminOverview: React.FC = () => {
     const rev = orders.reduce((sum, o) => sum + o.total_amount, 0);
     setTotalRevenue(rev);
   }, []);
+
+  useEffect(() => {
+    marketPriceService
+      .getMarketPrices()
+      .then((res) => setMandiResult(res))
+      .catch((e) => console.error('Failed to load mandi sync status:', e));
+  }, []);
+
+  const mandiIsLive = mandiResult?.status === 'live';
 
   return (
     <div className="space-y-8">
@@ -90,8 +100,12 @@ export const AdminOverview: React.FC = () => {
             <Activity className="w-4 h-4 text-emerald-700" />
             <span>External API Integrations & Resilient Data Sync Health</span>
           </h3>
-          <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
-            All Systems Operational
+          <span
+            className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${
+              mandiIsLive ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+            }`}
+          >
+            {mandiResult ? (mandiIsLive ? 'Mandi Feed: Live' : 'Mandi Feed: Cached') : 'Checking Integrations…'}
           </span>
         </div>
 
@@ -99,10 +113,25 @@ export const AdminOverview: React.FC = () => {
           <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200 space-y-1">
             <div className="flex items-center justify-between">
               <span className="font-bold text-gray-900">Mandi Reference API</span>
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              {mandiIsLive ? (
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              ) : (
+                <AlertTriangle className="w-4 h-4 text-amber-600" />
+              )}
             </div>
-            <p className="text-gray-500 text-[11px]">Provider: AGMARKNET / CAMPCO Mandi Feed</p>
-            <p className="text-emerald-800 font-semibold pt-1">Status: Cached & Normalized</p>
+            <p className="text-gray-500 text-[11px]">Provider: AGMARKNET / data.gov.in mandi feed (via secure Edge Function)</p>
+            <p className={`font-semibold pt-1 ${mandiIsLive ? 'text-emerald-800' : 'text-amber-800'}`}>
+              Status:{' '}
+              {!mandiResult
+                ? 'Checking…'
+                : mandiIsLive
+                  ? 'Live — refreshed from government feed'
+                  : 'Cached — not refreshed now'}
+            </p>
+            <p className="text-gray-500 text-[11px]">
+              Last updated: {mandiResult?.lastUpdated ? formatDateTime(mandiResult.lastUpdated) : '—'}
+              {mandiResult?.priceDate ? ` · Market date: ${mandiResult.priceDate}` : ''}
+            </p>
           </div>
 
           <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200 space-y-1">

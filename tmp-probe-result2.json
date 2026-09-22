@@ -1,0 +1,1711 @@
+{
+    "ok":  true,
+    "apiKeyPresent":  true,
+    "probesRun":  6,
+    "results":  [
+                    {
+                        "label":  "C2-national-arecanut",
+                        "query":  "filters[commodity]=Arecanut\u0026limit=20\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  447,
+                        "summary":  {
+                                        "keys":  [
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "active",
+                                                     "index_name",
+                                                     "org",
+                                                     "org_type",
+                                                     "source",
+                                                     "title",
+                                                     "external_ws_url",
+                                                     "visualizable",
+                                                     "field",
+                                                     "external_ws",
+                                                     "catalog_uuid",
+                                                     "sector",
+                                                     "target_bucket",
+                                                     "desc",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  0,
+                                        "total":  0,
+                                        "limit":  "20",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  0,
+                                        "recordFields":  [
+
+                                                         ],
+                                        "distinct":  {
+                                                         "state":  [
+
+                                                                   ],
+                                                         "commodity":  [
+
+                                                                       ],
+                                                         "variety":  [
+
+                                                                     ]
+                                                     },
+                                        "sample":  [
+
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "D2-national-coconut",
+                        "query":  "filters[commodity]=Coconut\u0026limit=20\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  186,
+                        "summary":  {
+                                        "keys":  [
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "active",
+                                                     "index_name",
+                                                     "org",
+                                                     "org_type",
+                                                     "source",
+                                                     "title",
+                                                     "external_ws_url",
+                                                     "visualizable",
+                                                     "field",
+                                                     "external_ws",
+                                                     "catalog_uuid",
+                                                     "sector",
+                                                     "target_bucket",
+                                                     "desc",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  20,
+                                        "total":  226,
+                                        "limit":  "20",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  20,
+                                        "recordFields":  [
+                                                             "state",
+                                                             "district",
+                                                             "market",
+                                                             "commodity",
+                                                             "variety",
+                                                             "grade",
+                                                             "arrival_date",
+                                                             "min_price",
+                                                             "max_price",
+                                                             "modal_price"
+                                                         ],
+                                        "distinct":  {
+                                                         "state":  [
+                                                                       {
+                                                                           "value":  "Tamil Nadu",
+                                                                           "count":  19
+                                                                       },
+                                                                       {
+                                                                           "value":  "Keralam",
+                                                                           "count":  1
+                                                                       }
+                                                                   ],
+                                                         "commodity":  [
+                                                                           {
+                                                                               "value":  "Coconut",
+                                                                               "count":  20
+                                                                           }
+                                                                       ],
+                                                         "variety":  [
+                                                                         {
+                                                                             "value":  "Coconut",
+                                                                             "count":  19
+                                                                         },
+                                                                         {
+                                                                             "value":  "Other",
+                                                                             "count":  1
+                                                                         }
+                                                                     ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "state":  "Keralam",
+                                                           "district":  "Kozhikode(Calicut)",
+                                                           "market":  "Mukkom Market",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Other",
+                                                           "grade":  "FAQ",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  6000,
+                                                           "max_price":  6400,
+                                                           "modal_price":  6200
+                                                       },
+                                                       {
+                                                           "state":  "Tamil Nadu",
+                                                           "district":  "Erode",
+                                                           "market":  "Perundurai(Uzhavar Sandhai )",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Coconut",
+                                                           "grade":  "Local",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  5000,
+                                                           "max_price":  5500,
+                                                           "modal_price":  5250
+                                                       },
+                                                       {
+                                                           "state":  "Tamil Nadu",
+                                                           "district":  "Dharmapuri",
+                                                           "market":  "Pennagaram(Uzhavar Sandhai )",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Coconut",
+                                                           "grade":  "Local",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  5500,
+                                                           "max_price":  6000,
+                                                           "modal_price":  5750
+                                                       },
+                                                       {
+                                                           "state":  "Tamil Nadu",
+                                                           "district":  "Dharmapuri",
+                                                           "market":  "Karimangalam(Uzhavar Sandhai)",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Coconut",
+                                                           "grade":  "Local",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  7000,
+                                                           "max_price":  7400,
+                                                           "modal_price":  7200
+                                                       },
+                                                       {
+                                                           "state":  "Tamil Nadu",
+                                                           "district":  "Madurai",
+                                                           "market":  "Usilampatti(Uzhavar Sandhai )",
+                                                           "commodity":  "Coconut",
+                                                           "variety":  "Coconut",
+                                                           "grade":  "Local",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  6800,
+                                                           "max_price":  7000,
+                                                           "modal_price":  6900
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "E2-national-blackpepper",
+                        "query":  "filters[commodity]=Black+Pepper\u0026limit=20\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  185,
+                        "summary":  {
+                                        "keys":  [
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "active",
+                                                     "index_name",
+                                                     "org",
+                                                     "org_type",
+                                                     "source",
+                                                     "title",
+                                                     "external_ws_url",
+                                                     "visualizable",
+                                                     "field",
+                                                     "external_ws",
+                                                     "catalog_uuid",
+                                                     "sector",
+                                                     "target_bucket",
+                                                     "desc",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  1,
+                                        "total":  1,
+                                        "limit":  "20",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  1,
+                                        "recordFields":  [
+                                                             "state",
+                                                             "district",
+                                                             "market",
+                                                             "commodity",
+                                                             "variety",
+                                                             "grade",
+                                                             "arrival_date",
+                                                             "min_price",
+                                                             "max_price",
+                                                             "modal_price"
+                                                         ],
+                                        "distinct":  {
+                                                         "state":  [
+                                                                       {
+                                                                           "value":  "West Bengal",
+                                                                           "count":  1
+                                                                       }
+                                                                   ],
+                                                         "commodity":  [
+                                                                           {
+                                                                               "value":  "Black Gram Dal(Urd Dal)",
+                                                                               "count":  1
+                                                                           }
+                                                                       ],
+                                                         "variety":  [
+                                                                         {
+                                                                             "value":  "Black Gram Dal",
+                                                                             "count":  1
+                                                                         }
+                                                                     ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "state":  "West Bengal",
+                                                           "district":  "Darjeeling",
+                                                           "market":  "Siliguri APMC",
+                                                           "commodity":  "Black Gram Dal(Urd Dal)",
+                                                           "variety":  "Black Gram Dal",
+                                                           "grade":  "FAQ",
+                                                           "arrival_date":  "20/09/2026",
+                                                           "min_price":  12000,
+                                                           "max_price":  13000,
+                                                           "modal_price":  12500
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "F2-other-resource-35985678",
+                        "query":  "filters[state]=Karnataka\u0026limit=20\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  337,
+                        "summary":  {
+                                        "keys":  [
+                                                     "index_name",
+                                                     "title",
+                                                     "desc",
+                                                     "org_type",
+                                                     "org",
+                                                     "sector",
+                                                     "source",
+                                                     "catalog_uuid",
+                                                     "visualizable",
+                                                     "active",
+                                                     "created",
+                                                     "updated",
+                                                     "created_date",
+                                                     "updated_date",
+                                                     "external_ws",
+                                                     "external_ws_url",
+                                                     "target_bucket",
+                                                     "field",
+                                                     "field_dependent",
+                                                     "order",
+                                                     "field_exposed",
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  20,
+                                        "total":  215272,
+                                        "limit":  "20",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  20,
+                                        "recordFields":  [
+                                                             "Arrival_Date",
+                                                             "Commodity",
+                                                             "Commodity_Code",
+                                                             "District",
+                                                             "Grade",
+                                                             "Market",
+                                                             "Max_Price",
+                                                             "Min_Price",
+                                                             "Modal_Price",
+                                                             "State",
+                                                             "Variety"
+                                                         ],
+                                        "distinct":  {
+                                                         "commodity":  [
+
+                                                                       ],
+                                                         "state":  [
+
+                                                                   ],
+                                                         "arrival_date":  [
+
+                                                                          ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "Arrival_Date":  "27/01/2026",
+                                                           "Commodity":  "Paddy(Common)",
+                                                           "Commodity_Code":  2,
+                                                           "District":  "Mandya",
+                                                           "Grade":  "Local",
+                                                           "Market":  "K.R. Pet APMC",
+                                                           "Max_Price":  2500,
+                                                           "Min_Price":  2500,
+                                                           "Modal_Price":  2500,
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Paddy Coarse"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "09/01/2026",
+                                                           "Commodity":  "Ridgeguard(Tori)",
+                                                           "Commodity_Code":  160,
+                                                           "District":  "Kolar",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Bangarpet APMC",
+                                                           "Max_Price":  1300,
+                                                           "Min_Price":  800,
+                                                           "Modal_Price":  1000,
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Ridgeguard(Tori)"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "12/01/2026",
+                                                           "Commodity":  "Knool Khol",
+                                                           "Commodity_Code":  177,
+                                                           "District":  "Bangalore",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Ramanagara APMC",
+                                                           "Max_Price":  2800,
+                                                           "Min_Price":  2000,
+                                                           "Modal_Price":  2500,
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Knool Khol"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "13/01/2026",
+                                                           "Commodity":  "Green Gram(Moong)(Whole)",
+                                                           "Commodity_Code":  9,
+                                                           "District":  "Dharwad",
+                                                           "Grade":  "Local",
+                                                           "Market":  "Hubli (Amaragol) APMC",
+                                                           "Max_Price":  6799,
+                                                           "Min_Price":  621,
+                                                           "Modal_Price":  3989,
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Green (Whole)"
+                                                       },
+                                                       {
+                                                           "Arrival_Date":  "14/01/2026",
+                                                           "Commodity":  "Tomato",
+                                                           "Commodity_Code":  78,
+                                                           "District":  "Kolar",
+                                                           "Grade":  "Small",
+                                                           "Market":  "Bhagepalli APMC",
+                                                           "Max_Price":  2000,
+                                                           "Min_Price":  615,
+                                                           "Modal_Price":  1923,
+                                                           "State":  "Karnataka",
+                                                           "Variety":  "Tomato"
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "H-lists-title-arecanut",
+                        "query":  "filters[title]=Arecanut\u0026limit=10\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  153,
+                        "summary":  {
+                                        "keys":  [
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records",
+                                                     "params"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  9,
+                                        "total":  9,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  9,
+                                        "recordFields":  [
+                                                             "index_name",
+                                                             "title",
+                                                             "desc",
+                                                             "org_type",
+                                                             "org",
+                                                             "sector",
+                                                             "source",
+                                                             "catalog_uuid",
+                                                             "visualizable",
+                                                             "active",
+                                                             "created",
+                                                             "updated",
+                                                             "created_date",
+                                                             "updated_date",
+                                                             "external_ws",
+                                                             "external_ws_url",
+                                                             "target_bucket",
+                                                             "field"
+                                                         ],
+                                        "distinct":  {
+                                                         "title":  [
+                                                                       {
+                                                                           "value":  "Production of Arecanut from 2015-16 to 2019-20 (From: Ministry of Agriculture and Farmers Welfare)",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "State-wise Production of Arecanut Crop for the year 2012-13 to 2015-16 (Ministry of Agriculture and Farmers Welfare)",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2019",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2020",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2021",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2022",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2023",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Year-wise Details of Total Seizure of Arecanut effected by Customs Field Formations and Directorate of Revenue Intelligence (DRI) at Airports and Air Cargo from 2021-22 to 2024-25",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Year-wise Details of Total Seizure of Arecanut effected by Customs Field Formations and Directorate of Revenue Intelligence (DRI) from 2021-22 to 2024-25",
+                                                                           "count":  1
+                                                                       }
+                                                                   ],
+                                                         "index_name":  [
+                                                                            {
+                                                                                "value":  "26b0fc0a-dd16-431a-b292-34c5e8259c71",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "274e493d-0887-4360-ae02-e17432e6626a",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "525be11e-a4ee-4be7-a90b-1070dfb12dd0",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "6f87b900-93df-4e06-ad9d-2fce07a7a549",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "a5767ca8-fa8a-4876-9029-22d171bf8cc6",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "af7d6ab8-fed9-45cc-aa5a-eadb6757a7a8",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "c122e2f5-c1b0-4dcd-98a8-4b4a3729422c",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "dadecda2-3ef0-4c49-9ec5-488ed9150e14",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "dd6b71ef-3858-4327-92cb-abf2ff09ed7b",
+                                                                                "count":  1
+                                                                            }
+                                                                        ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "index_name":  "6f87b900-93df-4e06-ad9d-2fce07a7a549",
+                                                           "title":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2021",
+                                                           "desc":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2021",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Department of Agriculture and Farmers Welfare",
+                                                                       "Directorate of Marketing and Inspection (DMI)",
+                                                                       "Ministry of Agriculture and Farmers Welfare"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Agricultural Marketing",
+                                                                          "Agriculture"
+                                                                      ],
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                           "visualizable":  "1",
+                                                           "active":  "0",
+                                                           "created":  1655442518,
+                                                           "updated":  1655699793,
+                                                           "created_date":  "2022-06-17T07:08:38Z",
+                                                           "updated_date":  "2022-06-20T10:06:33Z",
+                                                           "external_ws":  0,
+                                                           "external_ws_url":  "",
+                                                           "target_bucket":  {
+                                                                                 "index":  "agmarknet",
+                                                                                 "type":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                                                 "field":  "6f87b900-93df-4e06-ad9d-2fce07a7a549"
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "id":  "document_id",
+                                                                             "name":  "document_id",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "state",
+                                                                             "name":  "state",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "district",
+                                                                             "name":  "district",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "market",
+                                                                             "name":  "market",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "commodity",
+                                                                             "name":  "commodity",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "variety",
+                                                                             "name":  "variety",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "arrival_date",
+                                                                             "name":  "arrival_date",
+                                                                             "type":  "date"
+                                                                         },
+                                                                         {
+                                                                             "id":  "min_price",
+                                                                             "name":  "min_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "max_price",
+                                                                             "name":  "max_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "modal_price",
+                                                                             "name":  "modal_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "resource_uuid",
+                                                                             "name":  "resource_uuid",
+                                                                             "type":  "keyword"
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "index_name":  "c122e2f5-c1b0-4dcd-98a8-4b4a3729422c",
+                                                           "title":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2020",
+                                                           "desc":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2020",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Department of Agriculture and Farmers Welfare",
+                                                                       "Directorate of Marketing and Inspection (DMI)",
+                                                                       "Ministry of Agriculture and Farmers Welfare"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Agricultural Marketing",
+                                                                          "Agriculture"
+                                                                      ],
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                           "visualizable":  "1",
+                                                           "active":  "0",
+                                                           "created":  1655722660,
+                                                           "updated":  1655722660,
+                                                           "created_date":  "2022-06-20T12:57:40Z",
+                                                           "updated_date":  "2022-06-20T12:57:40Z",
+                                                           "external_ws":  0,
+                                                           "external_ws_url":  "",
+                                                           "target_bucket":  {
+                                                                                 "index":  "agmarknet",
+                                                                                 "type":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                                                 "field":  "c122e2f5-c1b0-4dcd-98a8-4b4a3729422c"
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "id":  "document_id",
+                                                                             "name":  "document_id",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "state",
+                                                                             "name":  "state",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "district",
+                                                                             "name":  "district",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "market",
+                                                                             "name":  "market",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "commodity",
+                                                                             "name":  "commodity",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "variety",
+                                                                             "name":  "variety",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "arrival_date",
+                                                                             "name":  "arrival_date",
+                                                                             "type":  "date"
+                                                                         },
+                                                                         {
+                                                                             "id":  "min_price",
+                                                                             "name":  "min_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "max_price",
+                                                                             "name":  "max_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "modal_price",
+                                                                             "name":  "modal_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "resource_uuid",
+                                                                             "name":  "resource_uuid",
+                                                                             "type":  "keyword"
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "index_name":  "dd6b71ef-3858-4327-92cb-abf2ff09ed7b",
+                                                           "title":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2019",
+                                                           "desc":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2019",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Department of Agriculture and Farmers Welfare",
+                                                                       "Directorate of Marketing and Inspection (DMI)",
+                                                                       "Ministry of Agriculture and Farmers Welfare"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Agricultural Marketing",
+                                                                          "Agriculture"
+                                                                      ],
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                           "visualizable":  "1",
+                                                           "active":  "0",
+                                                           "created":  1655978887,
+                                                           "updated":  1655978887,
+                                                           "created_date":  "2022-06-23T12:08:07Z",
+                                                           "updated_date":  "2022-06-23T12:08:07Z",
+                                                           "external_ws":  0,
+                                                           "external_ws_url":  "",
+                                                           "target_bucket":  {
+                                                                                 "index":  "agmarknet",
+                                                                                 "type":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                                                 "field":  "dd6b71ef-3858-4327-92cb-abf2ff09ed7b"
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "id":  "document_id",
+                                                                             "name":  "document_id",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "state",
+                                                                             "name":  "state",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "district",
+                                                                             "name":  "district",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "market",
+                                                                             "name":  "market",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "commodity",
+                                                                             "name":  "commodity",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "variety",
+                                                                             "name":  "variety",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "arrival_date",
+                                                                             "name":  "arrival_date",
+                                                                             "type":  "date"
+                                                                         },
+                                                                         {
+                                                                             "id":  "min_price",
+                                                                             "name":  "min_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "max_price",
+                                                                             "name":  "max_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "modal_price",
+                                                                             "name":  "modal_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "resource_uuid",
+                                                                             "name":  "resource_uuid",
+                                                                             "type":  "keyword"
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "index_name":  "525be11e-a4ee-4be7-a90b-1070dfb12dd0",
+                                                           "title":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2023",
+                                                           "desc":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2023",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Ministry of Agriculture and Farmers Welfare",
+                                                                       "Department of Agriculture and Farmers Welfare",
+                                                                       "Directorate of Marketing and Inspection (DMI)"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Agriculture",
+                                                                          "Agricultural Marketing"
+                                                                      ],
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                           "visualizable":  "1",
+                                                           "active":  "0",
+                                                           "created":  1684320635,
+                                                           "updated":  1684382938,
+                                                           "created_date":  "2023-05-17T12:50:35Z",
+                                                           "updated_date":  "2023-05-18T09:38:58Z",
+                                                           "external_ws":  0,
+                                                           "external_ws_url":  "",
+                                                           "target_bucket":  {
+                                                                                 "index":  "agmarknet",
+                                                                                 "type":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                                                 "field":  "525be11e-a4ee-4be7-a90b-1070dfb12dd0"
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "id":  "document_id",
+                                                                             "name":  "document_id",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "_state_",
+                                                                             "name":  "\"state\"",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "district",
+                                                                             "name":  "district",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "market",
+                                                                             "name":  "market",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "commodity",
+                                                                             "name":  "commodity",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "variety",
+                                                                             "name":  "variety",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "arrival_date",
+                                                                             "name":  "arrival_date",
+                                                                             "type":  "date"
+                                                                         },
+                                                                         {
+                                                                             "id":  "min_price",
+                                                                             "name":  "min_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "max_price",
+                                                                             "name":  "max_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "modal_price",
+                                                                             "name":  "modal_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "update_date",
+                                                                             "name":  "update_date",
+                                                                             "type":  "date"
+                                                                         },
+                                                                         {
+                                                                             "id":  "resource_uuid",
+                                                                             "name":  "resource_uuid",
+                                                                             "type":  "keyword"
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "index_name":  "af7d6ab8-fed9-45cc-aa5a-eadb6757a7a8",
+                                                           "title":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2022",
+                                                           "desc":  "Variety-wise Daily Market Prices of Arecanut(Betelnut/Supari) 2022",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Ministry of Agriculture and Farmers Welfare",
+                                                                       "Department of Agriculture and Farmers Welfare",
+                                                                       "Directorate of Marketing and Inspection (DMI)"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Agriculture",
+                                                                          "Agricultural Marketing"
+                                                                      ],
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                           "visualizable":  "1",
+                                                           "active":  "0",
+                                                           "created":  1684420616,
+                                                           "updated":  1684468350,
+                                                           "created_date":  "2023-05-18T16:36:56Z",
+                                                           "updated_date":  "2023-05-19T09:22:30Z",
+                                                           "external_ws":  0,
+                                                           "external_ws_url":  "",
+                                                           "target_bucket":  {
+                                                                                 "index":  "agmarknet",
+                                                                                 "type":  "0e5e0f9e-1a49-4200-a6d7-0826fc2dad1e",
+                                                                                 "field":  "af7d6ab8-fed9-45cc-aa5a-eadb6757a7a8"
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "id":  "document_id",
+                                                                             "name":  "document_id",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "state",
+                                                                             "name":  "state",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "district",
+                                                                             "name":  "district",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "market",
+                                                                             "name":  "market",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "commodity",
+                                                                             "name":  "commodity",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "variety",
+                                                                             "name":  "variety",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "arrival_date",
+                                                                             "name":  "arrival_date",
+                                                                             "type":  "date"
+                                                                         },
+                                                                         {
+                                                                             "id":  "min_price",
+                                                                             "name":  "min_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "max_price",
+                                                                             "name":  "max_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "modal_price",
+                                                                             "name":  "modal_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "resource_uuid",
+                                                                             "name":  "resource_uuid",
+                                                                             "type":  "keyword"
+                                                                         }
+                                                                     ]
+                                                       }
+                                                   ]
+                                    }
+                    },
+                    {
+                        "label":  "I-lists-title-mandi",
+                        "query":  "filters[title]=Mandi\u0026limit=10\u0026api-key=***\u0026format=json",
+                        "httpStatus":  200,
+                        "elapsedMs":  183,
+                        "summary":  {
+                                        "keys":  [
+                                                     "message",
+                                                     "version",
+                                                     "status",
+                                                     "total",
+                                                     "count",
+                                                     "limit",
+                                                     "offset",
+                                                     "records",
+                                                     "params"
+                                                 ],
+                                        "status":  "ok",
+                                        "count":  10,
+                                        "total":  288,
+                                        "limit":  "10",
+                                        "offset":  "0",
+                                        "message":  "Resource lists",
+                                        "recordsReceived":  10,
+                                        "recordFields":  [
+                                                             "index_name",
+                                                             "title",
+                                                             "desc",
+                                                             "type",
+                                                             "org_type",
+                                                             "org",
+                                                             "sector",
+                                                             "visualizable",
+                                                             "active",
+                                                             "source",
+                                                             "catalog_uuid",
+                                                             "created",
+                                                             "updated",
+                                                             "created_date",
+                                                             "updated_date",
+                                                             "target_bucket",
+                                                             "field"
+                                                         ],
+                                        "distinct":  {
+                                                         "title":  [
+                                                                       {
+                                                                           "value":  "Current Daily Price of Various Commodities from Various Markets (Mandi)",
+                                                                           "count":  2
+                                                                       },
+                                                                       {
+                                                                           "value":  "Anganwadis with Tap Connection under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Distribution of Scheduled Tribe Population by Sex for Mandi District of Himachal Pradesh, 1991",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Final Population Totals for Mandi District of Himachal Pradesh, 2001",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Financial progress under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Households with Piped Water Supply (PWS) under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Primary Census Abstract for Mandi District of Himachal Pradesh, 2001",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Schools with Tap Connection under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                                           "count":  1
+                                                                       },
+                                                                       {
+                                                                           "value":  "Village Amenities for Mandi District of Himachal Pradesh, 2011",
+                                                                           "count":  1
+                                                                       }
+                                                                   ],
+                                                         "index_name":  [
+                                                                            {
+                                                                                "value":  "13832738-460b-43f1-992a-04b0713b4eef",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "2f11455b-e5d7-41e3-b17e-86b3ec4f537a",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "4ce47f3d-9b81-4e9c-b6a8-e338c99210f1",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "6d96c016-a3db-4245-9f88-a2820c677465",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "7f1bb4be-ec04-4514-98fa-26ce1c438154",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "98bfd81c-9cfa-405b-a465-80f88d72dec4",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "9cd9551c-e7e2-4acc-a068-173903a113a2",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "9ef84268-d588-465a-a308-a864a43d0070",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "aejwvwmsrw653ndb8y8xbgpbj9fugfym",
+                                                                                "count":  1
+                                                                            },
+                                                                            {
+                                                                                "value":  "fdb2a288-fc69-47a9-91d1-2650b20cb1cf",
+                                                                                "count":  1
+                                                                            }
+                                                                        ]
+                                                     },
+                                        "sample":  [
+                                                       {
+                                                           "index_name":  "98bfd81c-9cfa-405b-a465-80f88d72dec4",
+                                                           "title":  "Financial progress under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                           "desc":  "Financial progress under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                           "type":  "resource",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Ministry of Jal Shakti",
+                                                                       "Department of Drinking Water and Sanitation"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Water and Sanitation",
+                                                                          "Drinking Water"
+                                                                      ],
+                                                           "visualizable":  "0",
+                                                           "active":  "1",
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "5106ead4-1aaf-489a-8b9f-6f1dc847eac0",
+                                                           "created":  1653901832,
+                                                           "updated":  1654062307,
+                                                           "created_date":  "2022-05-30T08:59:32Z",
+                                                           "updated_date":  "2022-06-01T11:15:07Z",
+                                                           "target_bucket":  {
+                                                                                 "index":  "js_schemedetails",
+                                                                                 "type":  "scheme_details",
+                                                                                 "filters":  {
+                                                                                                 "block_name":  "SADAR MANDI",
+                                                                                                 "district_name":  "MANDI",
+                                                                                                 "state_name":  "Himachal Pradesh"
+                                                                                             }
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "id":  "document_id",
+                                                                             "name":  "document_id",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "state_name",
+                                                                             "name":  "state_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "district_name",
+                                                                             "name":  "district_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "block_name",
+                                                                             "name":  "block_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "panchayat_name",
+                                                                             "name":  "panchayat_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "village_name",
+                                                                             "name":  "village_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "habitation_name",
+                                                                             "name":  "habitation_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "habitation_id",
+                                                                             "name":  "habitation_id",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "scheme_id",
+                                                                             "name":  "scheme_id",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "schemes_sources_id",
+                                                                             "name":  "schemes_sources_id",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "source_type",
+                                                                             "name":  "source_type",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "sourcetype_category",
+                                                                             "name":  "sourcetype_category",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "location",
+                                                                             "name":  "location",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "scheme_name",
+                                                                             "name":  "scheme_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "sanction_year",
+                                                                             "name":  "sanction_year",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "estimated_cost",
+                                                                             "name":  "estimated_cost",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "expenditure",
+                                                                             "name":  "expenditure",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "dateof_commencement",
+                                                                             "name":  "dateof_commencement",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "dateof_completion",
+                                                                             "name":  "dateof_completion",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "update_date",
+                                                                             "name":  "update_date",
+                                                                             "type":  "date"
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "index_name":  "13832738-460b-43f1-992a-04b0713b4eef",
+                                                           "title":  "Schools with Tap Connection under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                           "desc":  "Schools with Tap Connection under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                           "type":  "resource",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Ministry of Jal Shakti",
+                                                                       "Department of Drinking Water and Sanitation"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Water and Sanitation",
+                                                                          "Drinking Water"
+                                                                      ],
+                                                           "visualizable":  "0",
+                                                           "active":  "1",
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "b5d8d72e-8f14-411e-87cb-dbd55e9476c8",
+                                                           "created":  1658222467,
+                                                           "updated":  1658291587,
+                                                           "created_date":  "2022-07-19T08:59:32Z",
+                                                           "updated_date":  "2022-07-20T10:03:07Z",
+                                                           "target_bucket":  {
+                                                                                 "index":  "js_school",
+                                                                                 "type":  "school_details",
+                                                                                 "filters":  {
+                                                                                                 "block_name":  "SADAR MANDI",
+                                                                                                 "district_name":  "MANDI",
+                                                                                                 "state_name":  "Himachal Pradesh"
+                                                                                             }
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "name":  "state_name",
+                                                                             "id":  "state_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "district_name",
+                                                                             "id":  "district_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "block_name",
+                                                                             "id":  "block_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "panchayat_name",
+                                                                             "id":  "panchayat_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "village_name",
+                                                                             "id":  "village_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "habitation_name",
+                                                                             "id":  "habitation_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "habitation_id",
+                                                                             "id":  "habitation_id",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "school_id",
+                                                                             "id":  "school_id",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "school_name",
+                                                                             "id":  "school_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "no_of_student",
+                                                                             "id":  "no_of_student",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "name":  "school_category",
+                                                                             "id":  "school_category",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "school_subcategory",
+                                                                             "id":  "school_subcategory",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "update_date",
+                                                                             "id":  "update_date",
+                                                                             "type":  "date"
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "index_name":  "9cd9551c-e7e2-4acc-a068-173903a113a2",
+                                                           "title":  "Anganwadis with Tap Connection under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                           "desc":  "Anganwadis with Tap Connection under Jal Jeevan Mission (JJM) - block SADAR MANDI for district MANDI, Himachal Pradesh as on date",
+                                                           "type":  "resource",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Ministry of Jal Shakti",
+                                                                       "Department of Drinking Water and Sanitation"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Water and Sanitation",
+                                                                          "Drinking Water"
+                                                                      ],
+                                                           "visualizable":  "0",
+                                                           "active":  "1",
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "e4dd0301-07e7-4353-bf06-cf39882b06a5",
+                                                           "created":  1657079757,
+                                                           "updated":  1657079757,
+                                                           "created_date":  "2022-07-06T08:59:32Z",
+                                                           "updated_date":  "2022-07-06T11:33:13Z",
+                                                           "target_bucket":  {
+                                                                                 "index":  "js_anganwadi",
+                                                                                 "type":  "anganwadi_details",
+                                                                                 "filters":  {
+                                                                                                 "block_name":  "SADAR MANDI",
+                                                                                                 "district_name":  "MANDI",
+                                                                                                 "state_name":  "Himachal Pradesh"
+                                                                                             }
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "id":  "state_name",
+                                                                             "name":  "state_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "district_name",
+                                                                             "name":  "district_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "block_name",
+                                                                             "name":  "block_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "panchayat_name",
+                                                                             "name":  "panchayat_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "village_name",
+                                                                             "name":  "village_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "habitation_name",
+                                                                             "name":  "habitation_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "habitation_id",
+                                                                             "name":  "habitation_id",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "anganwadi_id",
+                                                                             "name":  "anganwadi_id",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "anganwadi_name",
+                                                                             "name":  "anganwadi_name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "no_of_student",
+                                                                             "name":  "no_of_student",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "anganwadi_category",
+                                                                             "name":  "anganwadi_category",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "update_date",
+                                                                             "name":  "update_date",
+                                                                             "type":  "date"
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "index_name":  "fdb2a288-fc69-47a9-91d1-2650b20cb1cf",
+                                                           "title":  "Final Population Totals for Mandi District of Himachal Pradesh, 2001",
+                                                           "desc":  "Final Population Totals for Mandi District of Himachal Pradesh, 2001",
+                                                           "org_type":  "Central",
+                                                           "org":  [
+                                                                       "Ministry of Home Affairs",
+                                                                       "Department of Home",
+                                                                       "Registrar General and Census Commissioner, India"
+                                                                   ],
+                                                           "sector":  [
+                                                                          "Census and Surveys",
+                                                                          "Census",
+                                                                          "Population Enumerator"
+                                                                      ],
+                                                           "source":  "data.gov.in",
+                                                           "catalog_uuid":  "b50d33cf-0dd6-4ca2-a157-4bf7212c7bf4",
+                                                           "visualizable":  "0",
+                                                           "active":  "1",
+                                                           "created":  1597923609,
+                                                           "updated":  1651204733,
+                                                           "created_date":  "2020-08-20T13:40:09Z",
+                                                           "updated_date":  "2022-04-29T09:28:53Z",
+                                                           "external_ws":  0,
+                                                           "external_ws_url":  "",
+                                                           "target_bucket":  {
+                                                                                 "index":  "census",
+                                                                                 "type":  "b50d33cf-0dd6-4ca2-a157-4bf7212c7bf4",
+                                                                                 "field":  "fdb2a288-fc69-47a9-91d1-2650b20cb1cf"
+                                                                             },
+                                                           "field":  [
+                                                                         {
+                                                                             "id":  "document_id",
+                                                                             "name":  "document_id",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "state_code",
+                                                                             "name":  "State Code",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "district_code",
+                                                                             "name":  "District Code",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "tahsil__sub_district_code",
+                                                                             "name":  "Tahsil/ Sub-District Code",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "town__village_code",
+                                                                             "name":  "Town/ Village Code",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "ward_code",
+                                                                             "name":  "Ward Code",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "enumeration_block_code",
+                                                                             "name":  "Enumeration Block Code",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "level",
+                                                                             "name":  "Level",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "name",
+                                                                             "name":  "Name",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "total__rural__urban",
+                                                                             "name":  "Total/ Rural/ Urban",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "id":  "total___persons",
+                                                                             "name":  "Total - Persons",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "total___males",
+                                                                             "name":  "Total - Males",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "total___females",
+                                                                             "name":  "Total - Females",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "scheduled_caste___persons",
+                                                                             "name":  "Scheduled Caste - Persons",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "scheduled_caste___males",
+                                                                             "name":  "Scheduled Caste - Males",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "scheduled_caste___females",
+                                                                             "name":  "Scheduled Caste - Females",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "scheduled_tribe___persons",
+                                                                             "name":  "Scheduled Tribe - Persons",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "scheduled_tribe___males",
+                                                                             "name":  "Scheduled Tribe - Males",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "scheduled_tribe___females",
+                                                                             "name":  "Scheduled Tribe - Females",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "id":  "resource_uuid",
+                                                                             "name":  "resource_uuid",
+                                                                             "type":  "keyword"
+                                                                         }
+                                                                     ]
+                                                       },
+                                                       {
+                                                           "timestamp":  1628066125,
+                                                           "created":  1627939168,
+                                                           "updated":  1789891239,
+                                                           "created_date":  "2021-08-02T21:19:28Z",
+                                                           "updated_date":  "2026-09-20T08:00:39Z",
+                                                           "active":  "1",
+                                                           "index_name":  "9ef84268-d588-465a-a308-a864a43d0070",
+                                                           "org":  [
+                                                                       "Ministry of Agriculture and Farmers Welfare",
+                                                                       "Department of Agriculture and Farmers Welfare"
+                                                                   ],
+                                                           "org_type":  "Central",
+                                                           "source":  "data.gov.in",
+                                                           "title":  "Current Daily Price of Various Commodities from Various Markets (Mandi)",
+                                                           "external_ws_url":  "",
+                                                           "visualizable":  "1",
+                                                           "field":  [
+                                                                         {
+                                                                             "name":  "State",
+                                                                             "id":  "state",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "District",
+                                                                             "id":  "district",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "Market",
+                                                                             "id":  "market",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "Commodity",
+                                                                             "id":  "commodity",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "Variety",
+                                                                             "id":  "variety",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "Grade",
+                                                                             "id":  "grade",
+                                                                             "type":  "keyword"
+                                                                         },
+                                                                         {
+                                                                             "name":  "Arrival_Date",
+                                                                             "id":  "arrival_date",
+                                                                             "type":  "date"
+                                                                         },
+                                                                         {
+                                                                             "name":  "Min_x0020_Price",
+                                                                             "id":  "min_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "name":  "Max_x0020_Price",
+                                                                             "id":  "max_price",
+                                                                             "type":  "double"
+                                                                         },
+                                                                         {
+                                                                             "name":  "Modal_x0020_Price",
+                                                                             "id":  "modal_price",
+                                                                             "type":  "double"
+                                                                         }
+                                                                     ],
+                                                           "external_ws":  0,
+                                                           "catalog_uuid":  "6141ea17-a69d-4713-b600-0a43c8fd9a6c",
+                                                           "sector":  [
+                                                                          "Agriculture",
+                                                                          "Agricultural Marketing"
+                                                                      ],
+                                                           "target_bucket":  {
+                                                                                 "field":  "9ef84268-d588-465a-a308-a864a43d0070",
+                                                                                 "index":  "daily_mandi_price",
+                                                                                 "type":  "6141ea17-a69d-4713-b600-0a43c8fd9a6c",
+                                                                                 "host":  "10.193.68.52:9200"
+                                                                             },
+                                                           "desc":  "Current Daily Price of Various Commodities from Various Markets (Mandi)",
+                                                           "field_exposed":  [
+                                                                                 {
+                                                                                     "name":  "State",
+                                                                                     "id":  "state.keyword",
+                                                                                     "type":  "keyword"
+                                                                                 },
+                                                                                 {
+                                                                                     "name":  "District",
+                                                                                     "id":  "district",
+                                                                                     "type":  "keyword"
+                                                                                 },
+                                                                                 {
+                                                                                     "name":  "Market",
+                                                                                     "id":  "market",
+                                                                                     "type":  "keyword"
+                                                                                 },
+                                                                                 {
+                                                                                     "name":  "Commodity",
+                                                                                     "id":  "commodity",
+                                                                                     "type":  "keyword"
+                                                                                 },
+                                                                                 {
+                                                                                     "name":  "Variety",
+                                                                                     "id":  "variety",
+                                                                                     "type":  "keyword"
+                                                                                 },
+                                                                                 {
+                                                                                     "name":  "Grade",
+                                                                                     "id":  "grade",
+                                                                                     "type":  "keyword"
+                                                                                 }
+                                                                             ]
+                                                       }
+                                                   ]
+                                    }
+                    }
+                ]
+}

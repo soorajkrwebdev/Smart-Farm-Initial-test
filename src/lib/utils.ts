@@ -46,6 +46,19 @@ export function formatRelativeTime(dateString: string): string {
   return formatDate(dateString);
 }
 
+export function formatDateTime(dateString: string): string {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return dateString;
+  return new Intl.DateTimeFormat('en-IN', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(date);
+}
+
 // Calculate approximate distance between coordinates (Haversine formula in KM)
 export function calculateDistanceKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const R = 6371; // Radius of Earth in KM

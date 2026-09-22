@@ -22,7 +22,7 @@ import { productService } from '../../services/productService';
 import { marketPriceService, MarketPriceResult } from '../../services/marketPriceService';
 import { weatherService } from '../../services/weatherService';
 import { Product, WeatherData } from '../../types';
-import { formatINR, formatUnitPrice } from '../../lib/utils';
+import { formatUnitPrice, formatDate } from '../../lib/utils';
 import { useCart } from '../../context/CartContext';
 
 export const HomePage: React.FC = () => {
@@ -81,7 +81,11 @@ export const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 text-xs">
             <div className="flex items-center gap-2 shrink-0 font-bold text-emerald-300">
               <TrendingUp className="w-3.5 h-3.5" />
-              <span>MANDI LIVE BENCHMARKS:</span>
+              <span>
+                {mandiResult.status === 'live'
+                  ? 'MANDI BENCHMARKS (LIVE):'
+                  : `MANDI BENCHMARKS (CACHED · ${mandiResult.priceDate ? formatDate(mandiResult.priceDate) : 'no date'}):`}
+              </span>
             </div>
             <div className="flex items-center gap-6 overflow-x-auto scrollbar-none whitespace-nowrap text-emerald-100">
               {mandiResult.data.slice(0, 5).map((m) => (
@@ -118,7 +122,7 @@ export const HomePage: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
-              Connect directly with farmers, discover chemical-free fresh produce, compare real-time mandi reference prices, find skilled agricultural workers, and plan field operations with <strong>FarmAI</strong>.
+              Connect directly with farmers, discover chemical-free fresh produce, compare mandi reference prices (clearly labelled live or cached), find skilled agricultural workers, and plan field operations with <strong>FarmAI</strong>.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -494,7 +498,7 @@ export const HomePage: React.FC = () => {
                 Authentic Agricultural Data, Zero Disguised Figures.
               </h3>
               <p className="text-xs sm:text-sm text-emerald-200/80 leading-relaxed">
-                FarmNexa never fabricates live mandi auctions or weather observations. Every mandi reference price specifies its APMC origin, reporting date, and quality disclaimer. Our mission is direct farmer empowerment through transparency.
+                Farmlynq never fabricates live mandi auctions or weather observations. Every mandi reference price specifies its APMC origin, reporting date, and quality disclaimer. Our mission is direct farmer empowerment through transparency.
               </p>
             </div>
 

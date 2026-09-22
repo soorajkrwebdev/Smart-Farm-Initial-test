@@ -1,0 +1,294 @@
+{
+    "ok":  true,
+    "refreshed":  true,
+    "throttled":  false,
+    "fetchedAt":  "2026-09-20T08:25:42.909Z",
+    "total":  32,
+    "counts":  {
+                   "arecanut":  0,
+                   "coconut":  0,
+                   "black_pepper":  0
+               },
+    "crop_details":  {
+                         "arecanut":  {
+                                          "label":  "Arecanut",
+                                          "count":  0,
+                                          "records_received":  0,
+                                          "filter_used":  null,
+                                          "filters_tried":  [
+                                                                "Arecanut",
+                                                                "Arecanut(Betelnut/Supari)",
+                                                                "Arecanut (Betelnut/Supari)",
+                                                                "Arecanut(Betelnut)",
+                                                                "Betelnut",
+                                                                "Betel Nut",
+                                                                "Supari"
+                                                            ],
+                                          "requests":  7,
+                                          "latest_price_date":  null,
+                                          "commodity_names_returned":  [
+
+                                                                       ],
+                                          "districts":  [
+
+                                                        ],
+                                          "markets":  [
+
+                                                      ],
+                                          "errors":  [
+                                                         "No records returned for Arecanut for any known commodity spelling (Arecanut, Arecanut(Betelnut/Supari), Arecanut (Betelnut/Supari), Arecanut(Betelnut), Betelnut, Betel Nut, Supari)."
+                                                     ]
+                                      },
+                         "coconut":  {
+                                         "label":  "Coconut",
+                                         "count":  0,
+                                         "records_received":  0,
+                                         "filter_used":  null,
+                                         "filters_tried":  [
+                                                               "Coconut",
+                                                               "Coconut(Copra)",
+                                                               "Coconut (Copra)",
+                                                               "Copra",
+                                                               "Tender Coconut"
+                                                           ],
+                                         "requests":  5,
+                                         "latest_price_date":  null,
+                                         "commodity_names_returned":  [
+
+                                                                      ],
+                                         "districts":  [
+
+                                                       ],
+                                         "markets":  [
+
+                                                     ],
+                                         "errors":  [
+                                                        "No records returned for Coconut for any known commodity spelling (Coconut, Coconut(Copra), Coconut (Copra), Copra, Tender Coconut)."
+                                                    ]
+                                     },
+                         "black_pepper":  {
+                                              "label":  "Black Pepper",
+                                              "count":  0,
+                                              "records_received":  0,
+                                              "filter_used":  null,
+                                              "filters_tried":  [
+                                                                    "Black Pepper",
+                                                                    "Black pepper",
+                                                                    "Blackpepper",
+                                                                    "Pepper",
+                                                                    "Pepper(Black)",
+                                                                    "Pepper (Black)"
+                                                                ],
+                                              "requests":  6,
+                                              "latest_price_date":  null,
+                                              "commodity_names_returned":  [
+
+                                                                           ],
+                                              "districts":  [
+
+                                                            ],
+                                              "markets":  [
+
+                                                          ],
+                                              "errors":  [
+                                                             "No records returned for Black Pepper for any known commodity spelling (Black Pepper, Black pepper, Blackpepper, Pepper, Pepper(Black), Pepper (Black))."
+                                                         ]
+                                          }
+                     },
+    "recordsReceived":  32,
+    "recordsValidated":  32,
+    "recordsSkipped":  0,
+    "recordsUpserted":  32,
+    "earliestPriceDate":  "2026-09-20",
+    "latestPriceDate":  "2026-09-20",
+    "general":  {
+                    "records":  32,
+                    "requests":  1
+                },
+    "requests":  {
+                     "total":  19,
+                     "failed":  0
+                 },
+    "state":  "Karnataka",
+    "district":  null,
+    "pageSize":  500,
+    "source":  "Government of India - data.gov.in / AGMARKNET",
+    "sourceUrl":  "https://data.gov.in/resource/current-daily-price-various-commodities-various-markets-mandi",
+    "errors":  [
+
+               ],
+    "durationMs":  5711,
+    "request_log":  [
+                        {
+                            "crop":  "general",
+                            "commodity":  "(all commodities)",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  32,
+                            "totalAvailable":  32
+                        },
+                        {
+                            "crop":  "arecanut",
+                            "commodity":  "Arecanut",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "arecanut",
+                            "commodity":  "Arecanut(Betelnut/Supari)",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "arecanut",
+                            "commodity":  "Arecanut (Betelnut/Supari)",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "arecanut",
+                            "commodity":  "Arecanut(Betelnut)",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "arecanut",
+                            "commodity":  "Betelnut",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "arecanut",
+                            "commodity":  "Betel Nut",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "arecanut",
+                            "commodity":  "Supari",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "coconut",
+                            "commodity":  "Coconut",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "coconut",
+                            "commodity":  "Coconut(Copra)",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "coconut",
+                            "commodity":  "Coconut (Copra)",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "coconut",
+                            "commodity":  "Copra",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "coconut",
+                            "commodity":  "Tender Coconut",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "black_pepper",
+                            "commodity":  "Black Pepper",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "black_pepper",
+                            "commodity":  "Black pepper",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "black_pepper",
+                            "commodity":  "Blackpepper",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "black_pepper",
+                            "commodity":  "Pepper",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "black_pepper",
+                            "commodity":  "Pepper(Black)",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        },
+                        {
+                            "crop":  "black_pepper",
+                            "commodity":  "Pepper (Black)",
+                            "offset":  0,
+                            "limit":  500,
+                            "httpStatus":  200,
+                            "recordsReceived":  0,
+                            "totalAvailable":  0
+                        }
+                    ]
+}

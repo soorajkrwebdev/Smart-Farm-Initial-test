@@ -1,5 +1,5 @@
 // ===================================================
-// FarmNexa CORE TYPES & DATA INTERFACES
+// Farmlynq CORE TYPES & DATA INTERFACES
 // ===================================================
 
 export type UserRole = 'farmer' | 'consumer' | 'worker' | 'admin';

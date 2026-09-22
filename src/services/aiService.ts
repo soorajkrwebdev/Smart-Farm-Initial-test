@@ -23,7 +23,11 @@ export const aiService = {
         const res = await marketPriceService.getMarketPrices(commodity, district);
         return {
           source: res.source,
+          // 'live' | 'cached' | 'local' — so the assistant never claims stale rows are real-time.
+          data_status: res.status,
           last_updated: res.lastUpdated,
+          market_data_date: res.priceDate,
+          note: res.note,
           prices: res.data.slice(0, 4).map((p) => ({
             commodity: p.commodity,
             market: p.market,
@@ -131,8 +135,23 @@ export const aiService = {
         const items = res.prices
           .map((item: any) => `• **${item.commodity}** (${item.market}): Modal reference **${item.modal_price}** [Range: ${item.range}] on ${item.date}`)
           .join('\n');
+        const freshLabel =
+          res.data_status === 'live'
+            ? 'freshly fetched from the government mandi feed'
+            : res.data_status === 'cached'
+              ? 'previously fetched and stored in Supabase (not refreshed just now)'
+              : 'previously stored on-device records (no server connection available)';
+        const dateLine = res.market_data_date ? `\n\nLatest market data date: **${res.market_data_date}**.` : '';
+        const warning =
+          res.data_status === 'live'
+            ? ''
+            : '\n\n⚠️ These are cached prices. The live mandi refresh could not be completed, so treat them as indicative historical benchmarks rather than real-time quotes.';
+        const direction =
+          res.data_status === 'live'
+            ? 'According to the freshly fetched mandi market data:'
+            : 'According to the most recent data available in our store:';
         return {
-          reply: `According to the latest available mandi market data:\n\n${items}\n\n*Reference prices are sourced from ${res.source}. Actual realized farmgate prices may vary based on moisture, grade, and delivery conditions.*`,
+          reply: `${direction}\n\n${items}${dateLine}\n\n*Reference prices are ${freshLabel} (${res.source}). Actual realized farmgate prices may vary based on moisture, grade, and delivery conditions.*${warning}`,
           toolCalls,
         };
       }
@@ -232,7 +251,7 @@ export const aiService = {
       };
     } else {
       return {
-        reply: `Namaskara! I am **FarmNexa Assistant**. I can help you find fresh farm produce directly from local farmers, compare mandi prices, or track your orders.\n\nWhat produce are you looking for today?`,
+        reply: `Namaskara! I am **Farmlynq Assistant**. I can help you find fresh farm produce directly from local farmers, compare mandi prices, or track your orders.\n\nWhat produce are you looking for today?`,
       };
     }
   },

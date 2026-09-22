@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { productService } from '../../services/productService';
-import { marketPriceService } from '../../services/marketPriceService';
+import { marketPriceService, MarketPriceResult } from '../../services/marketPriceService';
 import { weatherService } from '../../services/weatherService';
-import { Product, MarketPrice, WeatherData } from '../../types';
-import { formatUnitPrice } from '../../lib/utils';
+import { Product, WeatherData } from '../../types';
+import { formatUnitPrice, formatDate, formatDateTime } from '../../lib/utils';
 import { 
   Package, 
   TrendingUp, 
@@ -22,8 +22,9 @@ import { useCart } from '../../context/CartContext';
 export const ConsumerDashboard: React.FC = () => {
   const { user } = useAuth();
   const [featuredProduce, setFeaturedProduce] = useState<Product[]>([]);
-  const [mandiPrices, setMandiPrices] = useState<MarketPrice[]>([]);
+  const [mandiResult, setMandiResult] = useState<MarketPriceResult | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(null);
+  const mandiPrices = mandiResult ? mandiResult.data.slice(0, 4) : [];
   const { addItem } = useCart();
   const [addedId, setAddedId] = useState<string | null>(null);
 
@@ -35,7 +36,7 @@ export const ConsumerDashboard: React.FC = () => {
         weatherService.getWeatherForDistrict(user?.district || 'Dakshina Kannada'),
       ]);
       setFeaturedProduce(prods.slice(0, 3));
-      setMandiPrices(mandi.data.slice(0, 4));
+      setMandiResult(mandi);
       setWeather(w);
     }
     load();
@@ -112,12 +113,26 @@ export const ConsumerDashboard: React.FC = () => {
           <div className="flex items-center justify-between">
             <h3 className="text-sm font-bold text-gray-900 flex items-center gap-1.5">
               <TrendingUp className="w-4 h-4 text-emerald-700" />
-              <span>Today's Mandi Wholesale Reference</span>
+              <span>{mandiResult?.status === 'live' ? "Today's Mandi Wholesale Reference" : 'Mandi Wholesale Reference (Cached)'}</span>
             </h3>
             <Link to="/market-prices" className="text-xs font-bold text-emerald-800 hover:underline">
               Compare &rarr;
             </Link>
           </div>
+
+          {mandiResult && (
+            <p
+              className={`text-[10px] font-semibold px-2 py-1 rounded-lg inline-block ${
+                mandiResult.status === 'live'
+                  ? 'bg-emerald-50 text-emerald-800'
+                  : 'bg-amber-50 text-amber-800'
+              }`}
+            >
+              {mandiResult.status === 'live' ? 'LIVE · ' : 'CACHED · '}
+              Last updated: {mandiResult.lastUpdated ? formatDateTime(mandiResult.lastUpdated) : '—'}
+              {mandiResult.priceDate ? ` · Market date: ${formatDate(mandiResult.priceDate)}` : ''}
+            </p>
+          )}
 
           <div className="divide-y divide-gray-100 text-xs">
             {mandiPrices.map((m) => (
@@ -165,7 +180,7 @@ export const ConsumerDashboard: React.FC = () => {
             <Sparkles className="w-5 h-5 text-amber-700" />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-amber-950">Ask FarmNexa Consumer AI</h4>
+            <h4 className="text-sm font-bold text-amber-950">Ask Farmlynq Consumer AI</h4>
             <p className="text-xs text-amber-800">"Find organic black pepper under ₹600/kg from Sullia farmers"</p>
           </div>
         </div>

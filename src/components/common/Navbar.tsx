@@ -72,12 +72,12 @@ export const Navbar: React.FC = () => {
               <Link to="/" className="flex items-center gap-2.5 group">
                 <img 
                   src="/favicon2.svg" 
-                  alt="FarmNexa Logo"
+                  alt="Farmlynq Logo"
                   className="w-10 h-10 group-hover:scale-105 transition-transform"
                 />
                 <div className="flex flex-col">
                   <span className="text-lg font-extrabold text-emerald-950 tracking-tight leading-none">
-                    Farm<span className="text-emerald-600">Nexa</span>
+                    Farm<span className="text-emerald-600">lynq</span>
                   </span>
                   <span className="text-[9px] uppercase tracking-wider text-emerald-800/80 font-medium hidden sm:block">
                     Connecting the future of farming
@@ -164,11 +164,17 @@ export const Navbar: React.FC = () => {
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                     className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-gray-100 border border-transparent hover:border-gray-200 transition-all"
                   >
-                    <img
-                      src={user.avatar_url || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop'}
-                      alt={user.name}
-                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg object-cover border border-emerald-300"
-                    />
+                    {user.avatar_url ? (
+                      <img
+                        src={user.avatar_url}
+                        alt={user.name}
+                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-emerald-300 shrink-0"
+                      />
+                    ) : (
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-800 text-white flex items-center justify-center font-bold text-xs sm:text-sm uppercase border border-emerald-700/60 shadow-xs shrink-0 select-none">
+                        {user.name ? user.name.trim().charAt(0).toUpperCase() : 'U'}
+                      </div>
+                    )}
                     <div className="hidden sm:flex flex-col text-left">
                       <span className="text-xs font-semibold text-gray-900 truncate max-w-[100px]">
                         {user.name.split(' ')[0]}
@@ -245,7 +251,7 @@ export const Navbar: React.FC = () => {
                     to="/register"
                     className="px-3.5 py-1.5 text-xs font-semibold bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl shadow-xs transition-colors"
                   >
-                    Join FarmNexa
+                    Join Farmlynq
                   </Link>
                 </div>
               )}

@@ -40,7 +40,7 @@ export const AdminLayout: React.FC = () => {
               </span>
             </div>
             <p className="text-xs text-slate-300 mt-0.5">
-              FarmNexa Ecosystem Monitoring & Governance Control
+              Farmlynq Ecosystem Monitoring & Governance Control
             </p>
           </div>
         </div>

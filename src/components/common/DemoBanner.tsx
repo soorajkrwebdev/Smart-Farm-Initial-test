@@ -19,7 +19,7 @@ export const DemoBanner: React.FC = () => {
         <div className="flex items-center gap-1.5">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
           <span className="font-bold text-emerald-200 tracking-wide uppercase text-[10px]">
-            FarmNexa Platform
+            Farmlynq Platform
           </span>
         </div>
 

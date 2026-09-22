@@ -97,11 +97,11 @@ export const RegisterPage: React.FC = () => {
         <div className="text-center">
           <img 
             src="/favicon2.svg" 
-            alt="FarmNexa Logo"
+            alt="Farmlynq Logo"
             className="w-12 h-12 mx-auto mb-3 drop-shadow-md"
           />
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-            Create Your FarmNexa Account
+            Create Your Farmlynq Account
           </h1>
           <p className="text-xs sm:text-sm text-gray-500 mt-1">
             Join thousands of farmers, consumers, and skilled agricultural workers across Karnataka.
@@ -118,7 +118,7 @@ export const RegisterPage: React.FC = () => {
           {/* Role Selector Cards */}
           <div>
             <label className="block text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">
-              Select Your Role on FarmNexa
+              Select Your Role on Farmlynq
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <button

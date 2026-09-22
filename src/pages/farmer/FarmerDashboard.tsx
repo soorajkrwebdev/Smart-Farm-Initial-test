@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { productService } from '../../services/productService';
 import { orderService } from '../../services/orderService';
-import { marketPriceService } from '../../services/marketPriceService';
+import { marketPriceService, MarketPriceResult } from '../../services/marketPriceService';
 import { weatherService } from '../../services/weatherService';
-import { Product, Order, MarketPrice, WeatherData } from '../../types';
-import { formatINR, formatUnitPrice } from '../../lib/utils';
+import { Product, Order, WeatherData } from '../../types';
+import { formatINR, formatUnitPrice, formatDate, formatDateTime } from '../../lib/utils';
 import { 
   Package, 
   ClipboardList, 
@@ -24,8 +24,9 @@ export const FarmerDashboard: React.FC = () => {
   const { user } = useAuth();
   const [products, setProducts] = useState<Product[]>([]);
   const [orders, setOrders] = useState<Order[]>([]);
-  const [mandiPrices, setMandiPrices] = useState<MarketPrice[]>([]);
+  const [mandiResult, setMandiResult] = useState<MarketPriceResult | null>(null);
   const [weather, setWeather] = useState<WeatherData | null>(null);
+  const mandiPrices = mandiResult ? mandiResult.data.slice(0, 3) : [];
 
   useEffect(() => {
     async function load() {
@@ -38,7 +39,7 @@ export const FarmerDashboard: React.FC = () => {
         ]);
         setProducts(myProds);
         setOrders(myOrders);
-        setMandiPrices(mandi.data.slice(0, 3));
+        setMandiResult(mandi);
         setWeather(w);
       }
     }
@@ -110,6 +111,20 @@ export const FarmerDashboard: React.FC = () => {
               Full Mandi Board &rarr;
             </Link>
           </div>
+
+          {mandiResult && (
+            <p
+              className={`text-[10px] font-semibold px-2 py-1 rounded-lg inline-block ${
+                mandiResult.status === 'live'
+                  ? 'bg-emerald-50 text-emerald-800'
+                  : 'bg-amber-50 text-amber-800'
+              }`}
+            >
+              {mandiResult.status === 'live' ? 'LIVE data · ' : 'CACHED data · '}
+              Last updated: {mandiResult.lastUpdated ? formatDateTime(mandiResult.lastUpdated) : '—'}
+              {mandiResult.priceDate ? ` · Market date: ${formatDate(mandiResult.priceDate)}` : ''}
+            </p>
+          )}
 
           <div className="divide-y divide-gray-100">
             {mandiPrices.map((p) => {
